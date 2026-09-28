@@ -4,7 +4,7 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>智慧图书馆一体化管理与服务平台</title>
-<meta name="description" content="智慧图书馆一体化管理与服务平台演示页面">
+<meta name="description" content="智慧图书馆一体化管理与服务平台业务工作台">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2213%22%20fill%3D%22%23315fce%22%2F%3E%3Cpath%20d%3D%22M12%2017c8-3%2015-2%2020%202%205-4%2012-5%2020-2v29c-8-3-15-2-20%202-5-4-12-5-20-2z%22%20fill%3D%22none%22%20stroke%3D%22white%22%20stroke-width%3D%224%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cpath%20d%3D%22M32%2019v29%22%20stroke%3D%22white%22%20stroke-width%3D%223%22%2F%3E%3C%2Fsvg%3E">
 <style>
 :root{
@@ -158,7 +158,7 @@ canvas{width:100%;height:100%}
 .chat-input button{width:80px;border:0;border-radius:10px;background:var(--brand);color:#fff;font-weight:700;font-size:12px}
 
 .donut-row{display:grid;grid-template-columns:160px 1fr;gap:18px;align-items:center}
-.donut{width:140px;height:140px;border-radius:50%;background:conic-gradient(var(--brand) 0 44%, var(--green) 44% 66%, var(--orange) 66% 80%, var(--purple) 80% 92%, #cfd6e2 92% 100%);position:relative;margin:auto}
+.donut{width:140px;height:140px;border-radius:50%;background:conic-gradient(var(--brand) 0 33.3%, var(--green) 33.3% 53.3%, var(--orange) 53.3% 80%, var(--purple) 80% 100%);position:relative;margin:auto}
 .donut:after{content:"";position:absolute;inset:24px;background:#fff;border-radius:50%}
 .legend{display:grid;gap:9px}
 .legend-item{display:flex;align-items:center;justify-content:space-between;font-size:11.5px}
@@ -359,6 +359,22 @@ canvas{width:100%;height:100%}
 .table td,.table th{font-variant-numeric:tabular-nums}
 @media(max-width:800px){.grid.cols-2,.grid.cols-3{grid-template-columns:1fr}}
 
+/* 业务数据、来源与操作反馈 */
+.source-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 14px;margin-bottom:18px;background:#f8fafc;border:1px solid #dde5ef;border-left:3px solid #6684bc;border-radius:7px;color:#4d5c71;font-size:11.5px}
+.source-bar strong{color:#233b62}.source-bar a{color:#315fce;font-weight:650;white-space:nowrap}
+.source-tag{display:inline-flex;align-items:center;gap:5px;padding:3px 7px;border:1px solid #d9e3f1;border-radius:5px;color:#526784;background:#fff;font-size:10.5px;font-weight:600}
+.record-summary{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 14px;border-top:1px solid #e9edf2;color:#677489;font-size:11px}
+.record-summary .pager{display:flex;gap:5px;align-items:center}.pager button{height:27px;padding:0 9px;border:1px solid #dce3ec;background:#fff;border-radius:5px;color:#415573;font-size:11px}.pager button:disabled{opacity:.4;cursor:default}
+.table-scroll{overflow-x:auto}.table tbody tr:hover{background:#f8fbff}.row-action{border:0;background:none;color:#315fce;padding:4px 0;font-weight:650;font-size:11.5px;cursor:pointer;text-align:left}.row-action:hover{text-decoration:underline}
+.toolbar .select{min-width:118px}.filter-meta{font-size:11px;color:#677489;padding:0 14px 10px}.empty-state{padding:34px;text-align:center;color:#7b8798;font-size:12px}
+.data-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px}.data-tile{border:1px solid #e5ebf3;background:#fbfcfe;border-radius:7px;padding:12px}.data-tile small{display:block;color:#778498;font-size:10.5px}.data-tile strong{display:block;color:#26394f;font-size:16px;margin:5px 0}.data-tile span{font-size:10.5px;color:#6c7889}
+.record-note{padding:11px 14px;border-top:1px solid #e9edf2;color:#647186;font-size:11px;line-height:1.55}.record-note b{color:#3b4b64}
+.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.detail-grid div{padding:9px 10px;background:#f7f9fc;border:1px solid #e8edf4;border-radius:6px}.detail-grid small{display:block;font-size:10px;color:#8190a3}.detail-grid b{display:block;margin-top:4px;font-size:11.5px;font-weight:650;overflow-wrap:anywhere}
+.notice-area{position:fixed;right:18px;bottom:18px;z-index:120;max-width:min(420px,calc(100vw - 36px));background:#fff;border:1px solid #cbd7e6;border-left:4px solid #315fce;box-shadow:0 14px 36px rgba(20,38,70,.16);border-radius:7px;padding:13px 15px;color:#34445c;font-size:12px;line-height:1.5;display:none}.notice-area.show{display:block}.notice-area b{display:block;margin-bottom:3px;color:#1e3558}
+.page-status{font-size:11px;color:#68788e;margin-top:8px}.page-status .source-tag{margin-right:5px}
+@media(max-width:860px){.source-bar{align-items:flex-start;flex-direction:column}.data-grid{grid-template-columns:1fr 1fr}.top-actions .pill:nth-last-child(2){display:none}.table{min-width:750px}}
+@media(max-width:600px){.data-grid{grid-template-columns:1fr}.page-head{align-items:flex-start;flex-direction:column}.top-search{width:150px}.top-actions{gap:5px}.content{padding:14px 10px}}
+
 </style>
 </head>
 <body>
@@ -394,7 +410,7 @@ canvas{width:100%;height:100%}
       <a class="nav-item" data-page="devices"><div class="nav-ico">设</div><span>设备智能调控</span></a>
       <a class="nav-item" data-page="apps"><div class="nav-ico">应</div><span>应用中心</span></a>
     </div>
-    <div class="side-bottom"><div class="demo-badge"><i class="demo-dot"></i><span>统一服务入口 · 运行视图</span></div></div>
+    <div class="side-bottom"><div class="demo-badge"><i class="demo-dot"></i><span>统一服务入口 · 业务工作台</span></div></div>
   </aside>
 
   <main class="main">
@@ -405,11 +421,12 @@ canvas{width:100%;height:100%}
         <div class="pill" id="sysClock">--</div>
         <div class="icon-btn" id="notifyBtn" title="消息">🔔<i></i></div>
         <div class="pill">湖北省图书馆</div>
-        <div class="pill" id="avatarBtn">管理员</div>
+        <div class="pill" id="avatarBtn" title="业务视图角色">业务管理员</div>
       </div>
     </header>
 
     <div class="content">
+      <div class="source-bar" role="status"><div><strong>数据口径</strong>　当前为导入的业务样本与目录记录；本页面尚未连接实时资源、知识服务、账本或设备接口。涉及正式业务办理，请从对应系统入口进入。</div><a data-goto="integration" href="#integration">查看接入状态 →</a></div>
 
       <!-- Dashboard -->
       <section class="page active" id="dashboard">
@@ -427,18 +444,18 @@ canvas{width:100%;height:100%}
 
 
         <div class="health-row">
-          <div class="health-card"><div class="health-top"><b>全类型资源服务</b><span>● 正常</span></div><div class="progress"><i style="width:99.9%"></i></div><div class="health-meta"><span>可用性 99.99%</span><span>延迟 86ms</span></div></div>
-          <div class="health-card"><div class="health-top"><b>知识服务引擎</b><span>● 正常</span></div><div class="progress"><i style="width:99.8%;background:#16a36a"></i></div><div class="health-meta"><span>可用性 99.98%</span><span>延迟 312ms</span></div></div>
-          <div class="health-card"><div class="health-top"><b>大数据分析服务</b><span>● 正常</span></div><div class="progress"><i style="width:99.7%;background:#7b61d1"></i></div><div class="health-meta"><span>可用性 99.97%</span><span>延迟 128ms</span></div></div>
-          <div class="health-card"><div class="health-top"><b>边缘网关集群</b><span>● 正常</span></div><div class="progress"><i style="width:99.5%;background:#e08a24"></i></div><div class="health-meta"><span>在线 6/6</span><span>延迟 18ms</span></div></div>
+          <div class="health-card"><div class="health-top"><b>资源业务系统</b><span>↗ 独立入口</span></div><div class="progress"><i style="width:100%"></i></div><div class="health-meta"><span>采访 / 编目 / 馆藏</span><span>未接实时 API</span></div></div>
+          <div class="health-card"><div class="health-top"><b>知识服务系统</b><span>↗ 独立入口</span></div><div class="progress"><i style="width:100%;background:#16a36a"></i></div><div class="health-meta"><span>检索 / 问答 / 阅读</span><span>未接实时 API</span></div></div>
+          <div class="health-card"><div class="health-top"><b>运营数据视图</b><span>● 本地数据</span></div><div class="progress"><i style="width:65%;background:#7b61d1"></i></div><div class="health-meta"><span>目录样本与报表结构</span><span>待数据同步</span></div></div>
+          <div class="health-card"><div class="health-top"><b>设备调控接口</b><span>○ 待接入</span></div><div class="progress"><i style="width:28%;background:#e08a24"></i></div><div class="health-meta"><span>设备台账与策略视图</span><span>不可远程下发</span></div></div>
         </div>
 
         <div style="height:14px"></div>
         <div class="grid cols-4">
-          <div class="card metric"><div class="metric-icon blue">资</div><div><div class="metric-label">资源总量</div><div class="metric-value">610,258</div><div class="metric-foot">纸质 · 电子 · 数字资源统一管理</div></div></div>
-          <div class="card metric"><div class="metric-icon green">知</div><div><div class="metric-label">今日知识服务</div><div class="metric-value">1,286</div><div class="metric-foot">检索、推荐、问答与阅读方案</div></div></div>
-          <div class="card metric"><div class="metric-icon orange">数</div><div><div class="metric-label">数据任务</div><div class="metric-value">24</div><div class="metric-foot">采集、统计与分析作业运行中</div></div></div>
-          <div class="card metric"><div class="metric-icon purple">设</div><div><div class="metric-label">在线设备</div><div class="metric-value">126</div><div class="metric-foot">网关、传感器、监控与RFID书架</div></div></div>
+          <div class="card metric"><div class="metric-icon blue">资</div><div><div class="metric-label">资源总量 · 背景系统</div><div class="metric-value">约 61 万</div><div class="metric-foot">以资源业务系统实际查询为准</div></div></div>
+          <div class="card metric"><div class="metric-icon green">录</div><div><div class="metric-label">本地目录记录</div><div class="metric-value" id="catalogCount">—</div><div class="metric-foot">可筛选、查看详情与导出</div></div></div>
+          <div class="card metric"><div class="metric-icon orange">类</div><div><div class="metric-label">资源类型</div><div class="metric-value">4</div><div class="metric-foot">纸质 / 电子 / 数字 / 特色</div></div></div>
+          <div class="card metric"><div class="metric-icon purple">源</div><div><div class="metric-label">接入来源</div><div class="metric-value">2</div><div class="metric-foot">资源系统与知识服务入口</div></div></div>
         </div>
 
         <div style="height:14px"></div>
@@ -463,11 +480,11 @@ canvas{width:100%;height:100%}
         <div style="height:14px"></div>
         <div class="split">
           <div class="card chart-wrap">
-            <div class="section-title"><h3>近 7 日服务趋势</h3><span class="sub">访问量 / 借阅量 / 知识服务量</span></div>
+            <div class="section-title"><h3>服务趋势字段</h3><span class="sub">历史序列样本 · 访问 / 借阅 / 知识服务</span></div>
             <canvas id="trendChart" width="900" height="260"></canvas>
           </div>
           <div class="card pad">
-            <div class="section-title"><h3>待办事项</h3><span class="sub">今日</span></div>
+            <div class="section-title"><h3>待办事项</h3><span class="sub">业务样本台账</span></div>
             <div class="activity">
               <div class="activity-item"><div class="activity-ico">资</div><div><b>数字资源待审核</b><p>18 项采集资源待完成元数据复核</p></div><span class="badge-count">18</span></div>
               <div class="activity-item"><div class="activity-ico">设</div><div><b>设备异常待处理</b><p>2 台设备存在上报延迟</p></div><span class="badge-count">2</span></div>
@@ -479,20 +496,20 @@ canvas{width:100%;height:100%}
         <div style="height:14px"></div>
         <div class="grid cols-2">
           <div class="card pad">
-            <div class="section-title"><h3>运行动态</h3><span class="sub">最近 30 分钟</span></div>
+            <div class="section-title"><h3>业务事件</h3><span class="sub">历史记录样本</span></div>
             <div class="activity">
-              <div class="activity-item"><div class="activity-ico">知</div><div><b>知识服务完成一轮馆藏增强问答</b><p>返回馆藏匹配 4 种，参考资源 15 条</p></div><span class="activity-time">2分钟前</span></div>
-              <div class="activity-item"><div class="activity-ico">加</div><div><b>地方志数字化批次完成自动验证</b><p>通过 2,164 项，待复核 8 项</p></div><span class="activity-time">8分钟前</span></div>
-              <div class="activity-item"><div class="activity-ico">设</div><div><b>四层RFID书架触发异常告警</b><p>SHELF-4F-019 超过 5 分钟未上报</p></div><span class="activity-time">13分钟前</span></div>
+              <div class="activity-item"><div class="activity-ico">知</div><div><b>知识服务会话记录</b><p>检索与馆藏匹配记录可在原知识服务系统查询。</p></div><span class="activity-time">09-21</span></div>
+              <div class="activity-item"><div class="activity-ico">加</div><div><b>地方志数字化批次待复核</b><p>批次 PR-260921-01 · 元数据缺失 8 项</p></div><span class="activity-time">09-21</span></div>
+              <div class="activity-item"><div class="activity-ico">设</div><div><b>RFID 书架上报异常记录</b><p>SHELF-4F-019 · 历史告警样本</p></div><span class="activity-time">09-21</span></div>
             </div>
           </div>
           <div class="card pad">
-            <div class="section-title"><h3>系统状态</h3><span class="sub">9 个核心服务</span></div>
+            <div class="section-title"><h3>接入状态</h3><span class="sub">以接口配置为准</span></div>
             <div class="kv">
-              <div class="kv-item"><span>资源服务</span><b style="color:#16a36a;font-size:13px">● 正常</b></div>
-              <div class="kv-item"><span>知识服务</span><b style="color:#16a36a;font-size:13px">● 正常</b></div>
-              <div class="kv-item"><span>数据分析</span><b style="color:#16a36a;font-size:13px">● 正常</b></div>
-              <div class="kv-item"><span>边缘网关</span><b style="color:#e08a24;font-size:13px">● 1项告警</b></div>
+              <div class="kv-item"><span>资源业务入口</span><b style="font-size:13px">已配置</b></div>
+              <div class="kv-item"><span>知识服务入口</span><b style="font-size:13px">已配置</b></div>
+              <div class="kv-item"><span>统计数据接口</span><b style="font-size:13px">待接入</b></div>
+              <div class="kv-item"><span>设备网关接口</span><b style="font-size:13px">待接入</b></div>
             </div>
           </div>
         </div>
@@ -500,7 +517,7 @@ canvas{width:100%;height:100%}
 <div style="height:14px"></div>
 <div class="grid cols-2">
   <div class="card pad">
-    <div class="section-title"><h3>智慧运营提示</h3><span class="sub">基于近期业务数据自动生成</span></div>
+    <div class="section-title"><h3>运营分析线索</h3><span class="sub">基于业务样本整理</span></div>
     <div class="activity">
       <div class="activity-item">
         <div class="activity-ico">热</div>
@@ -520,15 +537,15 @@ canvas{width:100%;height:100%}
     </div>
   </div>
   <div class="card pad">
-    <div class="section-title"><h3>今日业务概况</h3><span class="sub" id="lastRefreshText">最近更新 --:--</span></div>
+    <div class="section-title"><h3>业务字段概况</h3><span class="sub" id="lastRefreshText">本地数据批次</span></div>
     <div class="kv">
-      <div class="kv-item"><span>新增资源记录</span><b>286</b></div>
-      <div class="kv-item"><span>知识服务会话</span><b>1,286</b></div>
-      <div class="kv-item"><span>自动加工任务</span><b>38</b></div>
-      <div class="kv-item"><span>设备调控任务</span><b>284</b></div>
+      <div class="kv-item"><span>资源目录样本</span><b>30</b></div>
+      <div class="kv-item"><span>知识服务入口</span><b style="font-size:13px">已配置</b></div>
+      <div class="kv-item"><span>加工任务样本</span><b>12</b></div>
+      <div class="kv-item"><span>设备记录样本</span><b>14</b></div>
     </div>
     <div style="height:10px"></div>
-    <div class="notice"><strong>运行提示：</strong> 核心服务运行正常；2 台边缘设备存在上报延迟，已进入自动重试与降级处理。</div>
+    <div class="notice"><strong>接入提示：</strong> 当前 GitHub Pages 仅托管前端文件；真实运行状态、设备告警和控制回执需接入服务端接口后展示。</div>
   </div>
 </div>
 
@@ -536,18 +553,18 @@ canvas{width:100%;height:100%}
 
 <section class="page" id="integration">
   <div class="page-head">
-    <div><h1>系统运行中心</h1><p>统一查看资源、知识服务、数据分析和设备服务的运行状态</p></div>
+    <div><h1>系统运行中心</h1><p>统一查看业务入口、页面数据和接口接入范围</p></div>
     <div class="head-actions">
-      <button class="btn">刷新状态</button>
-      <button class="btn">运行日志</button>
+      <button class="btn" id="integrationRefreshBtn">检查接入配置</button>
+      <button class="btn" id="integrationLogBtn">查看接入说明</button>
     </div>
   </div>
 
   <div class="grid cols-4">
-    <div class="card metric"><div class="metric-icon blue">资</div><div><div class="metric-label">资源业务服务</div><div class="metric-value" style="font-size:17px;color:#2d7d5b">正常</div><div class="metric-foot">资源目录 / 馆藏 / 采访 / 编目</div></div></div>
-    <div class="card metric"><div class="metric-icon green">知</div><div><div class="metric-label">知识服务</div><div class="metric-value" style="font-size:17px;color:#2d7d5b">正常</div><div class="metric-foot">检索 / 推荐 / 问答 / 阅读方案</div></div></div>
-    <div class="card metric"><div class="metric-icon orange">数</div><div><div class="metric-label">数据分析服务</div><div class="metric-value" style="font-size:17px;color:#2d7d5b">正常</div><div class="metric-foot">统计 / 报表 / 运营分析</div></div></div>
-    <div class="card metric"><div class="metric-icon purple">设</div><div><div class="metric-label">设备服务</div><div class="metric-value" style="font-size:17px;color:#2d7d5b">正常</div><div class="metric-foot">网关 / 感知 / 调度 / 告警</div></div></div>
+    <div class="card metric"><div class="metric-icon blue">资</div><div><div class="metric-label">资源业务入口</div><div class="metric-value" style="font-size:17px">已配置</div><div class="metric-foot">实时接口待接入</div></div></div>
+    <div class="card metric"><div class="metric-icon green">知</div><div><div class="metric-label">知识服务入口</div><div class="metric-value" style="font-size:17px">已配置</div><div class="metric-foot">实时接口待接入</div></div></div>
+    <div class="card metric"><div class="metric-icon orange">数</div><div><div class="metric-label">数据分析视图</div><div class="metric-value" style="font-size:17px">本地批次</div><div class="metric-foot">统计接口待接入</div></div></div>
+    <div class="card metric"><div class="metric-icon purple">设</div><div><div class="metric-label">设备控制接口</div><div class="metric-value" style="font-size:17px">待接入</div><div class="metric-foot">不可远程下发</div></div></div>
   </div>
 
   <div style="height:12px"></div>
@@ -555,7 +572,7 @@ canvas{width:100%;height:100%}
     <div class="section-title"><h3>核心业务服务</h3><span class="sub">统一入口</span></div>
     <div class="system-panel">
       <div class="system-entry">
-        <div class="system-entry-head"><h4>全类型资源智慧管理</h4><span class="sys-badge ok">可用</span></div>
+        <div class="system-entry-head"><h4>全类型资源智慧管理</h4><span class="sys-badge ok">外部入口已配置</span></div>
         <p>资源采访、编目、馆藏管理、资源盘藏、读者服务、数字资源管理与统计报表。</p>
         <div class="system-toolbar">
           <button class="external-btn primary" data-system="resource">进入资源业务</button>
@@ -564,7 +581,7 @@ canvas{width:100%;height:100%}
         </div>
       </div>
       <div class="system-entry">
-        <div class="system-entry-head"><h4>图书馆知识服务</h4><span class="sys-badge ok">可用</span></div>
+        <div class="system-entry-head"><h4>图书馆知识服务</h4><span class="sys-badge ok">外部入口已配置</span></div>
         <p>智能检索、馆藏匹配、个性化推荐、智能问答、学习路径和阅读方案等知识服务。</p>
         <div class="system-toolbar">
           <button class="external-btn primary" data-system="knowledge">进入知识服务</button>
@@ -573,7 +590,7 @@ canvas{width:100%;height:100%}
         </div>
       </div>
       <div class="system-entry">
-        <div class="system-entry-head"><h4>大数据管理分析</h4><span class="sys-badge ok">可用</span></div>
+        <div class="system-entry-head"><h4>大数据管理分析</h4><span class="sys-badge">本地数据视图</span></div>
         <p>资源利用、借阅服务、知识服务与设备数据的统计分析、运营监测和报表输出。</p>
         <div class="system-toolbar">
           <button class="external-btn primary" data-goto="analytics">进入数据驾驶舱</button>
@@ -581,7 +598,7 @@ canvas{width:100%;height:100%}
         </div>
       </div>
       <div class="system-entry">
-        <div class="system-entry-head"><h4>设备资源智能调控</h4><span class="sys-badge ok">可用</span></div>
+        <div class="system-entry-head"><h4>设备资源智能调控</h4><span class="sys-badge">接口待接入</span></div>
         <p>边缘网关、设备状态感知、资源调度、多设备协同、告警与调控日志。</p>
         <div class="system-toolbar">
           <button class="external-btn primary" data-goto="devices">进入设备调控</button>
@@ -606,34 +623,36 @@ canvas{width:100%;height:100%}
       <!-- Resources -->
       <section class="page" id="resources">
         <div class="page-head">
-          <div><h1>全类型资源中心</h1><p>统一管理纸质、电子、数字与特色资源，支持采集、分析和馆藏状态查询</p><div style="margin-top:7px"><span class="sys-badge ok">数据正常</span></div></div>
-          <div class="head-actions"><button class="btn">批量导入</button><button class="btn primary">新建资源</button><button class="btn" data-system="resource">业务办理</button></div>
+          <div><h1>全类型资源中心</h1><p>统一检索纸质、电子、数字与特色资源，查看来源、编目、馆藏和授权信息</p><div class="page-status"><span class="source-tag">目录记录 · 本地批次</span>正式采访、编目及借还以原业务系统为准</div></div>
+          <div class="head-actions"><button class="btn" id="resourceExportBtn">导出当前结果</button><button class="btn primary" data-system="resource">进入资源业务</button></div>
         </div>
         <div class="grid cols-4">
-          <div class="card metric"><div class="metric-icon blue">纸</div><div><div class="metric-label">纸质资源</div><div class="metric-value">586,420</div><div class="metric-foot">可借 412,865</div></div></div>
-          <div class="card metric"><div class="metric-icon green">电</div><div><div class="metric-label">电子资源</div><div class="metric-value">12,680</div><div class="metric-foot">数据库及电子出版物</div></div></div>
-          <div class="card metric"><div class="metric-icon orange">数</div><div><div class="metric-label">数字资源</div><div class="metric-value">9,744</div><div class="metric-foot">图像、音视频、数字文献</div></div></div>
-          <div class="card metric"><div class="metric-icon purple">特</div><div><div class="metric-label">特色资源</div><div class="metric-value">1,414</div><div class="metric-foot">地方文献与专题资源</div></div></div>
+          <div class="card metric"><div class="metric-icon blue">纸</div><div><div class="metric-label">纸质资源 · 本地样本</div><div class="metric-value">10</div><div class="metric-foot">含馆藏地和在架状态字段</div></div></div>
+          <div class="card metric"><div class="metric-icon green">电</div><div><div class="metric-label">电子资源 · 本地样本</div><div class="metric-value">6</div><div class="metric-foot">数据库及电子出版物</div></div></div>
+          <div class="card metric"><div class="metric-icon orange">数</div><div><div class="metric-label">数字资源 · 本地样本</div><div class="metric-value">8</div><div class="metric-foot">图像、音视频、数字文献</div></div></div>
+          <div class="card metric"><div class="metric-icon purple">特</div><div><div class="metric-label">特色资源 · 本地样本</div><div class="metric-value">6</div><div class="metric-foot">地方文献与专题资源</div></div></div>
         </div>
         <div style="height:14px"></div>
         <div class="card">
           <div class="toolbar">
-            <div class="search"><input id="resourceKeyword" value="人工智能" placeholder="题名 / 作者 / ISBN / 主题词"/></div>
-            <select class="select"><option>全部资源</option><option>纸质资源</option><option>电子资源</option><option>数字资源</option></select>
-            <select class="select"><option>全部馆藏地</option><option>中文图书外借</option><option>中文保存本</option><option>数字资源库</option></select>
-            <button class="btn primary" id="resourceSearchBtn">统一检索</button><button class="btn" id="resourceLiveBtn">高级检索</button>
+            <div class="search"><input id="resourceKeyword" value="" placeholder="题名 / 责任者 / 主题 / 编号" aria-label="检索资源"/></div>
+            <select class="select" id="resourceType" aria-label="资源类型"><option value="">全部类型</option><option value="纸质">纸质资源</option><option value="电子">电子资源</option><option value="数字">数字资源</option><option value="特色">特色资源</option></select>
+            <select class="select" id="resourceLocation" aria-label="馆藏和来源"><option value="">全部位置</option><option value="中文图书外借">中文图书外借</option><option value="中文保存本">中文保存本</option><option value="数字资源库">数字资源库</option><option value="专题资源库">专题资源库</option><option value="数据库入口">数据库入口</option></select>
+            <select class="select" id="resourceStatus" aria-label="资源状态"><option value="">全部状态</option><option value="在架">在架</option><option value="可访问">可访问</option><option value="已归档">已归档</option><option value="待复核">待复核</option></select>
+            <button class="btn primary" id="resourceSearchBtn">检索</button><button class="btn" id="resourceResetBtn">重置</button>
           </div>
-          <div class="tabs"><div class="tab active">资源列表</div><div class="tab">采集任务</div><div class="tab">分析概览</div></div>
-          <table class="table">
-            <thead><tr><th>资源</th><th>资源类型</th><th>责任者</th><th>馆藏/状态</th><th>更新时间</th><th>操作</th></tr></thead>
-            <tbody id="resourceRows">
-              <tr><td class="title-cell"><b>人工智能：一种现代的方法</b><small>ISBN 978-7-111-69465-6</small></td><td><span class="tag blue">纸质图书</span></td><td>Stuart Russell 等</td><td><span class="tag green"><i class="status-dot"></i>在架 8册</span></td><td>2026-09-18</td><td style="color:#2457d6;cursor:pointer" class="resource-detail">查看详情</td></tr>
-              <tr><td class="title-cell"><b>机器学习</b><small>TP181 / 周志华</small></td><td><span class="tag blue">纸质图书</span></td><td>周志华</td><td><span class="tag green"><i class="status-dot"></i>在架 5册</span></td><td>2026-09-17</td><td style="color:#2457d6;cursor:pointer" class="resource-detail">查看详情</td></tr>
-              <tr><td class="title-cell"><b>人工智能专题数据库</b><small>数据库资源</small></td><td><span class="tag purple">电子资源</span></td><td>资源中心</td><td><span class="tag green"><i class="status-dot"></i>可访问</span></td><td>2026-09-21</td><td style="color:#2457d6">进入资源</td></tr>
-              <tr><td class="title-cell"><b>湖北地方文化数字图像集</b><small>数字对象 2,140 项</small></td><td><span class="tag orange">数字资源</span></td><td>数字资源部</td><td><span class="tag blue">已归档</span></td><td>2026-09-20</td><td style="color:#2457d6;cursor:pointer" class="resource-detail">查看对象</td></tr>
-              <tr><td class="title-cell"><b>馆藏建筑三维资源模型</b><small>OBJ / 3D 资源 · 62 项</small></td><td><span class="tag purple">3D资源</span></td><td>数字资源部</td><td><span class="tag green">可预览</span></td><td>2026-09-21</td><td style="color:#2457d6;cursor:pointer" class="resource-detail">在线预览</td></tr>
-            </tbody>
-          </table>
+          <div class="filter-meta" id="resourceFilterMeta">可按题名、责任者、主题和记录编号组合查询。</div>
+          <div class="table-scroll"><table class="table">
+            <thead><tr><th>资源 / 记录编号</th><th>类型 / 载体</th><th>责任者</th><th>主题</th><th>馆藏与状态</th><th>更新时间</th><th>操作</th></tr></thead>
+            <tbody id="resourceRows"></tbody>
+          </table></div>
+          <div class="record-summary"><span id="resourceResultCount">—</span><div class="pager"><button id="resourcePrevBtn" type="button">上一页</button><span id="resourcePageLabel">1 / 1</span><button id="resourceNextBtn" type="button">下一页</button></div></div>
+          <div class="record-note"><b>数据来源：</b>本地业务目录样本。检索、筛选、详情和导出在浏览器内处理；正式馆藏数量和借还状态请使用原业务系统核实。</div>
+        </div>
+        <div style="height:14px"></div>
+        <div class="grid cols-2">
+          <div class="card pad"><div class="section-title"><h3>资源质量检查</h3><span class="sub">本地目录样本</span></div><div class="data-grid" id="catalogQuality"></div></div>
+          <div class="card pad"><div class="section-title"><h3>采编与权限口径</h3><span class="sub">字段说明</span></div><div class="activity"><div class="activity-item"><div class="activity-ico">编</div><div><b>纸质资源</b><p>题名、责任者、主题、索书号、馆藏地和在架状态。</p></div></div><div class="activity-item"><div class="activity-ico">权</div><div><b>电子与数字资源</b><p>载体、访问范围、授权说明及入库状态单独维护。</p></div></div><div class="activity-item"><div class="activity-ico">源</div><div><b>来源可追溯</b><p>记录编号关联采集来源与处理批次，便于后续接口替换。</p></div></div></div></div>
         </div>
       </section>
 
@@ -704,10 +723,10 @@ canvas{width:100%;height:100%}
 
   <div style="height:14px"></div>
   <div class="grid cols-4">
-    <div class="card metric"><div class="metric-icon blue">批</div><div><div class="metric-label">今日批次</div><div class="metric-value">38</div><div class="metric-foot">运行中 6</div></div></div>
-    <div class="card metric"><div class="metric-icon green">验</div><div><div class="metric-label">验证通过率</div><div class="metric-value">98.7%</div><div class="metric-foot">异常 12 项</div></div></div>
-    <div class="card metric"><div class="metric-icon orange">流</div><div><div class="metric-label">追踪记录</div><div class="metric-value">5,842</div><div class="metric-foot">全节点可追溯</div></div></div>
-    <div class="card metric"><div class="metric-icon purple">推</div><div><div class="metric-label">自动推送</div><div class="metric-value">99.4%</div><div class="metric-foot">失败自动重试</div></div></div>
+    <div class="card metric"><div class="metric-icon blue">批</div><div><div class="metric-label">加工批次样本</div><div class="metric-value">12</div><div class="metric-foot">跨文档、图像、音视频和模型</div></div></div>
+    <div class="card metric"><div class="metric-icon green">验</div><div><div class="metric-label">已完成批次</div><div class="metric-value">5</div><div class="metric-foot">其他记录可按状态查询</div></div></div>
+    <div class="card metric"><div class="metric-icon orange">流</div><div><div class="metric-label">待复核批次</div><div class="metric-value">4</div><div class="metric-foot">异常数见下方台账</div></div></div>
+    <div class="card metric"><div class="metric-icon purple">源</div><div><div class="metric-label">资源载体</div><div class="metric-value">7</div><div class="metric-foot">文献 / 图像 / 音视频等</div></div></div>
   </div>
 
   <div style="height:14px"></div>
@@ -726,19 +745,26 @@ canvas{width:100%;height:100%}
     <div class="card pad">
       <div class="section-title"><h3>加工—存储联动</h3><span class="sub">自动推送与容错</span></div>
       <div class="activity">
-        <div class="activity-item"><div class="activity-ico">推</div><div><b>加工结果已自动推送</b><p>地方志_20260921_001.pdf → /archive/doc/2026/09/</p></div><span class="activity-time">3秒前</span></div>
-        <div class="activity-item"><div class="activity-ico">路</div><div><b>存储路径已同步</b><p>按“类型 + 日期 + ID”自动生成目录</p></div><span class="activity-time">16秒前</span></div>
-        <div class="activity-item"><div class="activity-ico">链</div><div><b>加工结果已生成可信记录</b><p>资源摘要哈希已写入可信账本，记录可追溯</p></div><span class="activity-time">1分钟前</span></div>
-        <div class="activity-item"><div class="activity-ico">重</div><div><b>传输异常自动重试成功</b><p>第 2 次重试恢复，文件完整性校验通过</p></div><span class="activity-time">4分钟前</span></div>
+        <div class="activity-item"><div class="activity-ico">推</div><div><b>加工结果推送记录</b><p>地方志_20260921_001.pdf → /archive/doc/2026/09/</p></div><span class="activity-time">09-21 15:22</span></div>
+        <div class="activity-item"><div class="activity-ico">路</div><div><b>存储路径同步记录</b><p>按“类型 + 日期 + ID”生成归档目录</p></div><span class="activity-time">09-21 15:21</span></div>
+        <div class="activity-item"><div class="activity-ico">链</div><div><b>可信记录字段</b><p>摘要哈希、资源标识与处理节点的对应关系</p></div><span class="activity-time">09-21 15:18</span></div>
+        <div class="activity-item"><div class="activity-ico">重</div><div><b>异常重试记录</b><p>第 2 次重试恢复，文件完整性校验字段为“通过”</p></div><span class="activity-time">09-21 15:14</span></div>
       </div>
     </div>
+  </div>
+  <div style="height:14px"></div>
+  <div class="card">
+    <div class="section-title" style="padding:15px 15px 0"><h3>加工任务台账</h3><span class="sub">批次、来源、校验与异常关联</span></div>
+    <div class="toolbar"><div class="search"><input id="processingKeyword" placeholder="批次编号 / 任务名称 / 来源" aria-label="查找加工任务"></div><select id="processingStatus" class="select" aria-label="加工状态"><option value="">全部状态</option><option>已完成</option><option>待复核</option><option>处理中</option><option>排队中</option></select><button class="btn" id="processingExportBtn">导出台账</button></div>
+    <div class="table-scroll"><table class="table"><thead><tr><th>批次编号</th><th>任务名称</th><th>资源类型</th><th>对象数</th><th>校验通过 / 异常</th><th>流向</th><th>状态</th><th>更新时间</th></tr></thead><tbody id="processingRows"></tbody></table></div>
+    <div class="record-summary"><span id="processingCount"></span><span>数据批次：2026-09-21 · 状态为历史记录</span></div>
   </div>
 </section>
 
       <!-- Storage -->
       <section class="page" id="storage">
   <div class="page-head">
-    <div><h1>存储与数字资产</h1><p>编码块分片、比例副本与动态复制、故障转移、冷热分层及数字资产全生命周期管理</p></div>
+    <div><h1>存储与数字资产</h1><p>分片、副本、容量、资产登记和可信记录的业务字段与历史台账</p><div class="page-status"><span class="source-tag">业务样本</span>存储遥测和资产登记接口待接入</div></div>
     <div class="head-actions"><button class="btn">存储策略</button><button class="btn primary" id="assetRegisterBtn">登记数字资产</button><button class="btn" data-system="resource">业务办理</button></div>
   </div>
 
@@ -776,10 +802,10 @@ canvas{width:100%;height:100%}
 
   <div style="height:14px"></div>
   <div class="grid cols-4">
-    <div class="card metric"><div class="metric-icon blue">链</div><div><div class="metric-label">可信账本状态</div><div class="metric-value" style="font-size:17px;color:#168a63">运行正常</div><div class="metric-foot">3 个节点在线</div></div></div>
-    <div class="card metric"><div class="metric-icon green">块</div><div><div class="metric-label">当前记录高度</div><div class="metric-value">128,493</div><div class="metric-foot">最近确认 3 秒前</div></div></div>
-    <div class="card metric"><div class="metric-icon orange">交</div><div><div class="metric-label">今日可信记录</div><div class="metric-value">3,268</div><div class="metric-foot">登记 / 评估 / 流转</div></div></div>
-    <div class="card metric"><div class="metric-icon purple">合</div><div><div class="metric-label">合约服务</div><div class="metric-value">6</div><div class="metric-foot">登记、流转与授权规则</div></div></div>
+    <div class="card metric"><div class="metric-icon blue">链</div><div><div class="metric-label">账本接口</div><div class="metric-value" style="font-size:17px">待接入</div><div class="metric-foot">不可核验实时链上状态</div></div></div>
+    <div class="card metric"><div class="metric-icon green">录</div><div><div class="metric-label">资产台账样本</div><div class="metric-value">3</div><div class="metric-foot">下方可查看字段</div></div></div>
+    <div class="card metric"><div class="metric-icon orange">事</div><div><div class="metric-label">业务事件样本</div><div class="metric-value">5</div><div class="metric-foot">登记 / 评估 / 流转</div></div></div>
+    <div class="card metric"><div class="metric-icon purple">合</div><div><div class="metric-label">规则类型</div><div class="metric-value">4</div><div class="metric-foot">登记、流转与授权等</div></div></div>
   </div>
 
   <div style="height:14px"></div>
@@ -813,8 +839,8 @@ canvas{width:100%;height:100%}
 
 <section class="page" id="ledger">
   <div class="page-head">
-    <div><h1>可信账本</h1><p>面向数字资源登记、评估、流转与授权的可信记录查询和运行监测</p></div>
-    <div class="head-actions"><button class="btn">节点管理</button><button class="btn">合约管理</button><button class="btn primary">查询可信记录</button></div>
+    <div><h1>可信账本</h1><p>数字资源登记、评估、流转和授权的记录字段与审计视图</p><div class="page-status"><span class="source-tag">历史业务样本</span>未连接链上查询与节点监测接口</div></div>
+    <div class="head-actions"><button class="btn" id="ledgerExportBtn">导出记录样本</button><button class="btn primary" id="ledgerQueryBtn">查询说明</button></div>
   </div>
 
   <div class="chain-overview">
@@ -823,7 +849,7 @@ canvas{width:100%;height:100%}
         <div class="chain-logo">链</div>
         <div>
           <div class="chain-title">数字资源可信账本网络</div>
-          <div class="chain-sub">联盟链 · 3 节点 · 共识正常 · 数据摘要确认</div>
+          <div class="chain-sub">节点与共识字段示意 · 实际状态需通过链上接口核验</div>
         </div>
       </div>
       <div class="node-list">
@@ -834,14 +860,14 @@ canvas{width:100%;height:100%}
     </div>
 
     <div class="card chain-card">
-      <div class="section-title"><h3>网络状态</h3><span class="sub">实时监测</span></div>
+      <div class="section-title"><h3>历史网络字段</h3><span class="sub">非实时监测</span></div>
       <div class="block-grid">
         <div class="block-metric"><span>区块高度</span><b>128,493</b></div>
-        <div class="block-metric"><span>今日交易</span><b>3,268</b></div>
+        <div class="block-metric"><span>历史交易字段</span><b>3,268</b></div>
         <div class="block-metric"><span>平均确认</span><b>1.2 s</b></div>
         <div class="block-metric"><span>节点在线</span><b>3 / 3</b></div>
       </div>
-      <div class="rule"><div><b>共识状态</b><span>节点状态一致，最近区块已完成确认</span></div><span class="tag green">正常</span></div>
+      <div class="rule"><div><b>共识状态字段</b><span>实际节点一致性和确认结果需由链上服务核验</span></div><span class="tag blue">样本</span></div>
     </div>
   </div>
 
@@ -860,7 +886,7 @@ canvas{width:100%;height:100%}
   <div style="height:14px"></div>
   <div class="grid cols-2">
     <div class="card">
-      <div class="section-title" style="padding:15px 15px 0"><h3>最近链上交易</h3><span class="sub">点击查看详情</span></div>
+      <div class="section-title" style="padding:15px 15px 0"><h3>可信记录样本</h3><span class="sub">点击查看字段</span></div>
       <table class="table tx-table">
         <thead><tr><th>时间</th><th>类型</th><th>资产标识</th><th>交易哈希</th><th>状态</th></tr></thead>
         <tbody>
@@ -885,7 +911,7 @@ canvas{width:100%;height:100%}
 
   <div style="height:14px"></div>
   <div class="card">
-    <div class="section-title" style="padding:15px 15px 0"><h3>链上审计记录</h3><span class="sub">最近 24 小时</span></div>
+    <div class="section-title" style="padding:15px 15px 0"><h3>审计记录样本</h3><span class="sub">历史字段</span></div>
     <table class="table audit-table">
       <thead><tr><th>时间</th><th>操作人</th><th>动作</th><th>资产标识</th><th>结果</th></tr></thead>
       <tbody>
@@ -900,20 +926,20 @@ canvas{width:100%;height:100%}
       <!-- Recommend -->
       <section class="page" id="recommend">
   <div class="page-head">
-    <div><h1>个性化知识推荐</h1><p>融合用户偏好、情境因素、资源特征与终端特性，动态生成知识推荐</p><div style="margin-top:7px"><span class="sys-badge ok">服务正常</span></div></div>
+    <div><h1>个性化知识推荐</h1><p>用户偏好、情境、资源特征与推荐解释的业务视图</p><div class="page-status"><span class="source-tag">场景数据</span>实时推荐服务请进入知识服务系统</div></div>
     <div class="head-actions"><button class="btn">推荐策略</button><button class="btn primary" id="refreshRecBtn">刷新推荐</button><button class="btn" data-system="knowledge">进入知识服务</button></div>
   </div>
 
   <div class="grid cols-3">
     <div class="card pad">
-      <div class="section-title"><h3>用户偏好画像</h3><span class="sub">行为持续更新</span></div>
+      <div class="section-title"><h3>用户偏好画像</h3><span class="sub">场景档案 U-ENG-001</span></div>
       <div class="profile"><div class="profile-avatar">U</div><div><h3>大学生 · 工科方向</h3><p>近30天阅读 18 本 · 活跃度高</p></div></div>
       <div class="chips"><span class="chip">人工智能 0.92</span><span class="chip">Python 0.84</span><span class="chip">机器学习 0.78</span><span class="chip">数据分析 0.65</span></div>
       <div class="rule"><div><b>新用户初始标签</b><span>专业、兴趣与学习目标可自动生成初始画像</span></div><span class="tag green">已启用</span></div>
     </div>
 
     <div class="card pad">
-      <div class="section-title"><h3>当前情境</h3><span class="sub">跨终端同步</span></div>
+      <div class="section-title"><h3>情境特征</h3><span class="sub">场景记录 · 2026-09-21</span></div>
       <div class="context-strip">
         <span class="context-pill"><b>位置</b> · 中文图书外借区</span>
         <span class="context-pill"><b>时间</b> · 周一下午</span>
@@ -925,7 +951,7 @@ canvas{width:100%;height:100%}
     </div>
 
     <div class="card pad">
-      <div class="section-title"><h3>推荐效果监测</h3><span class="sub">运行评估</span></div>
+      <div class="section-title"><h3>推荐效果字段</h3><span class="sub">样本评估视图</span></div>
       <div class="eval-bars">
         <div class="eval-line"><span>推荐点击率</span><div class="bar"><i style="width:72%"></i></div><b>31.4%</b></div>
         <div class="eval-line"><span>推荐覆盖率</span><div class="bar"><i style="width:68%"></i></div><b>68.2%</b></div>
@@ -945,7 +971,7 @@ canvas{width:100%;height:100%}
       <div class="weight"><label>行为反馈</label><input type="range" min="0" max="100" value="15"><em>15%</em></div>
     </div>
     <div class="card pad">
-      <div class="section-title"><h3>动态调整</h3><span class="sub">基于实时行为</span></div>
+      <div class="section-title"><h3>动态调整规则</h3><span class="sub">策略配置示例</span></div>
       <div class="strategy-grid">
         <div class="strategy"><div class="strategy-head"><b>高频访问提升</b><span class="tag green">运行中</span></div><p>近期频繁访问“机器学习”资源，提高同主题候选资源排序权重。</p><span class="tag blue">+30% 权重</span></div>
         <div class="strategy"><div class="strategy-head"><b>跳过行为降权</b><span class="tag green">运行中</span></div><p>连续跳过某类资源时自动降低占比，避免重复无效推荐。</p><span class="tag orange">自动调整</span></div>
@@ -977,42 +1003,40 @@ canvas{width:100%;height:100%}
       <!-- QA -->
       <section class="page" id="qa">
   <div class="page-head">
-    <div><h1>智能问答</h1><p>基于馆藏知识库的检索增强生成，支持语义理解、知识协同与连续多轮对话</p><div style="margin-top:7px"><span class="sys-badge ok">服务正常</span></div></div>
+    <div><h1>智能问答与馆藏检索</h1><p>当前页面可检索本地资源目录；自然语言生成、多轮问答在知识服务系统办理</p><div class="page-status"><span class="source-tag">本地目录检索</span>当前页面未接问答 API</div></div>
     <div class="head-actions"><button class="btn" data-system="knowledge">进入知识服务</button></div>
   </div>
 
   <div class="grid cols-4">
-    <div class="card metric"><div class="metric-icon blue">意</div><div><div class="metric-label">意图识别</div><div class="metric-value">99%+</div><div class="metric-foot">多类业务意图</div></div></div>
-    <div class="card metric"><div class="metric-icon green">检索增强</div><div><div class="metric-label">知识库召回</div><div class="metric-value">15</div><div class="metric-foot">本轮参考资源</div></div></div>
-    <div class="card metric"><div class="metric-icon orange">源</div><div><div class="metric-label">参考资源</div><div class="metric-value">15</div><div class="metric-foot">馆藏 / 专题 / 业务知识</div></div></div>
-    <div class="card metric"><div class="metric-icon purple">轮</div><div><div class="metric-label">上下文轮次</div><div class="metric-value">3</div><div class="metric-foot">持续保留当前条件</div></div></div>
+    <div class="card metric"><div class="metric-icon blue">录</div><div><div class="metric-label">目录范围</div><div class="metric-value">30</div><div class="metric-foot">本地资源记录</div></div></div>
+    <div class="card metric"><div class="metric-icon green">检</div><div><div class="metric-label">当前处理方式</div><div class="metric-value" style="font-size:16px">关键词匹配</div><div class="metric-foot">题名 / 主题 / 摘要</div></div></div>
+    <div class="card metric"><div class="metric-icon orange">源</div><div><div class="metric-label">知识服务入口</div><div class="metric-value" style="font-size:16px">已配置</div><div class="metric-foot">外部系统另页打开</div></div></div>
+    <div class="card metric"><div class="metric-icon purple">接</div><div><div class="metric-label">问答接口</div><div class="metric-value" style="font-size:16px">待接入</div><div class="metric-foot">不生成模型答案</div></div></div>
   </div>
 
   <div style="height:14px"></div>
   <div class="card chat-layout">
     <div class="chat-side">
-      <button class="chat-new">＋ 新建对话</button>
+      <button class="chat-new" id="newCatalogSearch">＋ 新建检索</button>
       <div class="chat-history">
-        <div class="chat-h active">零基础人工智能学习</div>
-        <div class="chat-h">荆楚文化馆藏推荐</div>
-        <div class="chat-h">机器学习入门书单</div>
+        <div class="chat-h active">资源目录检索</div>
+        <div class="chat-h">按题名或主题输入关键词</div>
+        <div class="chat-h">打开记录查看来源与权限</div>
       </div>
-      <div class="notice" style="margin-top:14px"><div>●</div><div><strong>知识服务状态</strong><br/>馆藏知识库已连接 · 检索增强已开启</div></div>
+      <div class="notice" style="margin-top:14px"><div>●</div><div><strong>检索范围</strong><br/>本地目录样本。完整馆藏问答请进入知识服务系统。</div></div>
     </div>
     <div class="chat-main">
       <div class="messages" id="messages">
-        <div class="msg"><div class="msg-avatar">智</div><div class="bubble">你好，我可以结合馆藏、数据库与业务知识回答问题，也可以根据上下文继续多轮交流。</div></div>
-        <div class="msg user"><div class="msg-avatar">我</div><div class="bubble">我想找适合零基础大学生学习人工智能的中文图书，请推荐几本。</div></div>
-        <div class="msg"><div class="msg-avatar">智</div><div class="bubble">结合“零基础、大学生、中文图书”的条件，我建议先从 Python 基础、机器学习概念和人工智能概论三个层次入手。当前馆藏中可优先关注《Python编程：从入门到实践》《机器学习》《人工智能：一种现代的方法》。如需要，我可以继续生成 3 个月学习路径并匹配可借馆藏。</div></div>
+        <div class="msg"><div class="msg-avatar">录</div><div class="bubble">输入题名、作者或主题词，可以查询当前导入的目录记录并打开详情。自然语言问答与实时馆藏匹配请点击右上角「进入知识服务」。</div></div>
       </div>
-      <div class="chat-input"><textarea id="chatText" placeholder="继续提问，例如：把刚才三本书按难度排序"></textarea><button id="sendBtn">发送</button></div>
+      <div class="chat-input"><textarea id="chatText" placeholder="例如：人工智能、地方志、Python"></textarea><button id="sendBtn">检索</button></div>
     </div>
   </div>
 
   <div style="height:14px"></div>
   <div class="rag-grid">
     <div class="card pad">
-      <div class="section-title"><h3>本轮知识处理链路</h3><span class="sub">可追踪</span></div>
+      <div class="section-title"><h3>知识服务接口规划</h3><span class="sub">尚未接入当前页面</span></div>
       <div class="trace">
         <div class="trace-step"><i>01</i><b>意图识别</b></div>
         <div class="trace-step"><i>02</i><b>语义解析</b></div>
@@ -1021,8 +1045,8 @@ canvas{width:100%;height:100%}
         <div class="trace-step"><i>05</i><b>答案生成</b></div>
         <div class="trace-step"><i>06</i><b>安全校验</b></div>
       </div>
-      <div class="rule"><div><b>外部系统集成</b><span>馆藏检索、用户服务与业务接口可按权限调用</span></div><span class="tag green">已连接</span></div>
-      <div class="rule"><div><b>多轮上下文</b><span>保留主题、条件、已推荐资源与当前任务状态</span></div><span class="tag blue">3 轮</span></div>
+      <div class="rule"><div><b>外部系统集成</b><span>知识服务入口可打开；当前页面未调用其 API</span></div><span class="tag orange">待接入</span></div>
+      <div class="rule"><div><b>多轮上下文</b><span>由原知识服务系统处理，当前仅保留本页检索记录</span></div><span class="tag blue">原系统</span></div>
     </div>
     <div class="card pad">
       <div class="section-title"><h3>参考知识来源</h3><span class="sub">检索增强</span></div>
@@ -1048,7 +1072,7 @@ canvas{width:100%;height:100%}
       <!-- Plan -->
       <section class="page" id="plan">
   <div class="page-head">
-    <div><h1>个性化阅读方案</h1><p>根据学习、科研、通勤与休闲等场景，生成可执行的阶段化资源方案</p><div style="margin-top:7px"><span class="sys-badge ok">服务正常</span></div></div>
+    <div><h1>个性化阅读方案</h1><p>按学习、科研、通勤和休闲场景组织阶段任务与相关资源</p><div class="page-status"><span class="source-tag">方案样本</span>方案生成请进入知识服务系统</div></div>
     <div class="head-actions"><button class="btn">导出方案</button><button class="btn primary">重新生成</button><button class="btn" data-system="knowledge">进入知识服务</button></div>
   </div>
 
@@ -1082,33 +1106,32 @@ canvas{width:100%;height:100%}
       <!-- Analytics -->
       <section class="page" id="analytics">
   <div class="page-head">
-    <div><h1>数据驾驶舱</h1><p>汇聚资源、读者、服务与设备数据，提供多维分析、评估与运营决策支持</p><div style="margin-top:7px"><span class="sys-badge ok">数据正常</span></div></div>
-    <div class="head-actions"><button class="btn">导出报表</button><button class="btn primary">自定义看板</button><button class="btn" data-system="analytics">统计报表</button></div>
+    <div><h1>数据驾驶舱</h1><p>资源、读者、服务与设备数据的统计维度和运营分析视图</p><div class="page-status"><span class="source-tag">历史统计样本</span>动态报表接口待接入</div></div>
+    <div class="head-actions"><button class="btn" id="analyticsExportBtn">导出目录汇总</button><button class="btn" data-goto="resources">查看资源明细</button><button class="btn" data-system="analytics">原系统报表</button></div>
   </div>
 
   <div class="grid cols-4">
-    <div class="card metric"><div class="metric-icon blue">访</div><div><div class="metric-label">今日访问</div><div class="metric-value">12,684</div><div class="metric-foot">较昨日 +8.2%</div></div></div>
-    <div class="card metric"><div class="metric-icon green">馆</div><div><div class="metric-label">馆藏利用率</div><div class="metric-value">41.8%</div><div class="metric-foot">可钻取到资源明细</div></div></div>
-    <div class="card metric"><div class="metric-icon orange">设</div><div><div class="metric-label">设备使用率</div><div class="metric-value">72.6%</div><div class="metric-foot">运行时长 / 总时长</div></div></div>
-    <div class="card metric"><div class="metric-icon purple">服</div><div><div class="metric-label">知识服务量</div><div class="metric-value">3,460</div><div class="metric-foot">检索 / 推荐 / 问答</div></div></div>
+    <div class="card metric"><div class="metric-icon blue">录</div><div><div class="metric-label">资源记录样本</div><div class="metric-value">30</div><div class="metric-foot">四类资源 · 可检索</div></div></div>
+    <div class="card metric"><div class="metric-icon green">核</div><div><div class="metric-label">待复核资源</div><div class="metric-value">6</div><div class="metric-foot">查看资源中心明细</div></div></div>
+    <div class="card metric"><div class="metric-icon orange">设</div><div><div class="metric-label">设备台账记录</div><div class="metric-value">14</div><div class="metric-foot">含 2 条历史告警</div></div></div>
+    <div class="card metric"><div class="metric-icon purple">接</div><div><div class="metric-label">实时统计接口</div><div class="metric-value" style="font-size:16px">待接入</div><div class="metric-foot">不展示实时业务指标</div></div></div>
   </div>
 
   <div style="height:14px"></div>
   <div class="split">
     <div class="card chart-wrap">
-      <div class="section-title"><h3>资源访问与借阅趋势</h3><span class="sub">支持按馆、资源类型与读者群体钻取</span></div>
+      <div class="section-title"><h3>资源访问与借阅趋势字段</h3><span class="sub">历史序列样本 · 待统计接口</span></div>
       <canvas id="analyticsChart" width="900" height="260"></canvas>
     </div>
     <div class="card pad">
-      <div class="section-title"><h3>资源结构</h3><span class="sub">全类型资源</span></div>
+      <div class="section-title"><h3>资源结构</h3><span class="sub">30 条本地目录样本</span></div>
       <div class="donut-row">
         <div class="donut"></div>
         <div class="legend">
-          <div class="legend-item"><span><i style="--c:#2457d6"></i>纸质资源</span><b>44%</b></div>
-          <div class="legend-item"><span><i style="--c:#16a36a"></i>电子资源</span><b>22%</b></div>
-          <div class="legend-item"><span><i style="--c:#e08a24"></i>数字资源</span><b>14%</b></div>
-          <div class="legend-item"><span><i style="--c:#7b61d1"></i>特色资源</span><b>12%</b></div>
-          <div class="legend-item"><span><i style="--c:#cfd6e2"></i>其他</span><b>8%</b></div>
+          <div class="legend-item"><span><i style="--c:#2457d6"></i>纸质资源</span><b>10 · 33%</b></div>
+          <div class="legend-item"><span><i style="--c:#16a36a"></i>电子资源</span><b>6 · 20%</b></div>
+          <div class="legend-item"><span><i style="--c:#e08a24"></i>数字资源</span><b>8 · 27%</b></div>
+          <div class="legend-item"><span><i style="--c:#7b61d1"></i>特色资源</span><b>6 · 20%</b></div>
         </div>
       </div>
     </div>
@@ -1155,14 +1178,14 @@ canvas{width:100%;height:100%}
       <section class="page" id="devices">
   <div class="page-head">
     <div><h1>设备资源智能调控</h1><p>以智能边缘网关为核心，实现设备感知、调度决策、多设备协同、异常降级与执行反馈</p></div>
-    <div class="head-actions"><button class="btn">设备接入</button><button class="btn primary">新建调控策略</button></div>
+    <div class="head-actions"><button class="btn" data-goto="integration">查看接入状态</button><button class="btn primary" id="deviceStrategyBtn">查看策略说明</button></div>
   </div>
 
   <div class="grid cols-4">
-    <div class="card metric"><div class="metric-icon blue">GW</div><div><div class="metric-label">边缘网关</div><div class="metric-value">6</div><div class="metric-foot">在线 6 / 6</div></div></div>
-    <div class="card metric"><div class="metric-icon green">协</div><div><div class="metric-label">接入协议</div><div class="metric-value">4</div><div class="metric-foot">MQTT / CoAP / HTTPS / WS</div></div></div>
-    <div class="card metric"><div class="metric-icon orange">设</div><div><div class="metric-label">在线设备</div><div class="metric-value">126</div><div class="metric-foot">多类型统一接入</div></div></div>
-    <div class="card metric"><div class="metric-icon purple">策</div><div><div class="metric-label">今日调控任务</div><div class="metric-value">284</div><div class="metric-foot">自动执行 96.4%</div></div></div>
+    <div class="card metric"><div class="metric-icon blue">GW</div><div><div class="metric-label">网关样本</div><div class="metric-value">3</div><div class="metric-foot">查看设备台账</div></div></div>
+    <div class="card metric"><div class="metric-icon green">协</div><div><div class="metric-label">协议类型</div><div class="metric-value">3</div><div class="metric-foot">MQTT / CoAP / HTTPS</div></div></div>
+    <div class="card metric"><div class="metric-icon orange">设</div><div><div class="metric-label">设备台账样本</div><div class="metric-value">14</div><div class="metric-foot">五类设备可筛选</div></div></div>
+    <div class="card metric"><div class="metric-icon purple">警</div><div><div class="metric-label">历史告警记录</div><div class="metric-value">2</div><div class="metric-foot">仅供台账结构查看</div></div></div>
   </div>
 
   <div style="height:14px"></div>
@@ -1181,7 +1204,7 @@ canvas{width:100%;height:100%}
   <div style="height:14px"></div>
   <div class="gateway">
     <div class="card gateway-box">
-      <div class="gateway-hero"><div class="gateway-ico">GW</div><div><h3 style="margin:0 0 5px;font-size:15px">边缘计算网关 HB-GW-01</h3><div style="font-size:11.5px;color:#6b7487">在线 · CPU 28% · 内存 41% · 平均延迟 18ms</div></div></div>
+      <div class="gateway-hero"><div class="gateway-ico">GW</div><div><h3 style="margin:0 0 5px;font-size:15px">边缘计算网关 HB-GW-01</h3><div style="font-size:11.5px;color:#6b7487">历史记录 · CPU 28% · 内存 41% · 延迟 18ms · 09-21 15:20</div></div></div>
       <div class="proto"><span>MQTT</span><span>CoAP</span><span>HTTPS</span><span>WebSocket</span></div>
       <div class="device-grid">
         <div class="device"><div class="device-top"><b>环境传感器</b><div class="switch on"></div></div><p>温湿度 / CO₂ / 光照 · 42 台</p></div>
@@ -1196,7 +1219,7 @@ canvas{width:100%;height:100%}
     </div>
 
     <div class="card gateway-box">
-      <div class="section-title"><h3>实时态势</h3><span class="sub">感知输入</span></div>
+      <div class="section-title"><h3>历史态势记录</h3><span class="sub">2026-09-21 15:20</span></div>
       <div class="kv">
         <div class="kv-item"><span>室内温度</span><b>24.6°C</b></div>
         <div class="kv-item"><span>CO₂</span><b>612 ppm</b></div>
@@ -1237,7 +1260,7 @@ canvas{width:100%;height:100%}
       <div class="rule"><div><b>断点续传</b><span>通信恢复后自动补传，避免重复与缺失</span></div><div class="switch on"></div></div>
     </div>
     <div class="card pad">
-      <div class="section-title"><h3>调控与联动日志</h3><span class="sub">可审计</span></div>
+      <div class="section-title"><h3>调控与联动日志样本</h3><span class="sub">非实时回执</span></div>
       <div class="log-console">
         <div><span class="muted">15:20:18</span> [SENSE] 客流 438，CO₂ 612ppm，区域负载 82%</div>
         <div><span class="muted">15:20:19</span> [MODEL] 选择策略：高峰期舒适度优化 + 负载均衡</div>
@@ -1248,6 +1271,13 @@ canvas{width:100%;height:100%}
       </div>
       <div class="inline-actions" style="margin-top:10px"><span class="link-btn">接口联动</span><span class="link-btn">权限策略</span><span class="link-btn">异常处置</span><span class="link-btn">安全审计</span></div>
     </div>
+  </div>
+  <div style="height:14px"></div>
+  <div class="card">
+    <div class="section-title" style="padding:15px 15px 0"><h3>设备资产与告警台账</h3><span class="sub">按区域、协议、设备类型查询</span></div>
+    <div class="toolbar"><div class="search"><input id="deviceKeyword" placeholder="设备编号 / 类型 / 区域" aria-label="查找设备"></div><select id="deviceType" class="select" aria-label="设备类型"><option value="">全部设备</option><option>网关</option><option>环境传感器</option><option>RFID书架</option><option>监控设备</option><option>自助书柜</option></select><select id="deviceStatus" class="select" aria-label="设备状态"><option value="">全部状态</option><option>正常</option><option>告警</option><option>待巡检</option></select><button class="btn" id="deviceExportBtn">导出台账</button></div>
+    <div class="table-scroll"><table class="table"><thead><tr><th>设备编号</th><th>类型</th><th>所在区域</th><th>接入协议</th><th>最近记录</th><th>状态</th><th>责任单位</th></tr></thead><tbody id="deviceRows"></tbody></table></div>
+    <div class="record-summary"><span id="deviceCount"></span><span>来源：本地设备台账样本 · 非实时遥测</span></div>
   </div>
 </section>
 
@@ -1280,6 +1310,7 @@ canvas{width:100%;height:100%}
 </div>
 
 <script>
+document.addEventListener('DOMContentLoaded',()=>{
 const pageMeta={
  dashboard:["综合总览"," / 运行工作台"],
  integration:["运行中心"," / 一体化平台"],
@@ -1360,38 +1391,30 @@ function drawAll(){
 }
 drawAll();
 
-document.getElementById("resourceSearchBtn").addEventListener("click",()=>{
- const kw=document.getElementById("resourceKeyword").value.trim()||"资源";
- document.getElementById("resourceRows").innerHTML=`
- <tr><td class="title-cell"><b>${kw}：馆藏主题资源合集</b><small>统一检索结果</small></td><td><span class="tag blue">纸质图书</span></td><td>资源中心</td><td><span class="tag green">在架 6册</span></td><td>2026-09-21</td><td style="color:#2457d6;cursor:pointer" class="resource-detail">查看详情</td></tr>
- <tr><td class="title-cell"><b>${kw}专题数字资源</b><small>数字对象 328 项</small></td><td><span class="tag orange">数字资源</span></td><td>数字资源部</td><td><span class="tag blue">可访问</span></td><td>2026-09-21</td><td style="color:#2457d6;cursor:pointer" class="resource-detail">查看对象</td></tr>
- <tr><td class="title-cell"><b>${kw}相关电子资源库</b><small>数据库资源</small></td><td><span class="tag purple">电子资源</span></td><td>电子资源中心</td><td><span class="tag green">在线</span></td><td>2026-09-20</td><td style="color:#2457d6">进入资源</td></tr>`;
-});
-
-
-const resourceLiveBtn=document.getElementById("resourceLiveBtn");
-if(resourceLiveBtn) resourceLiveBtn.addEventListener("click",()=>openExternalSystem("resource"));
-
 function sendChat(){
  const ta=document.getElementById("chatText"), txt=ta.value.trim(); if(!txt)return;
  const box=document.getElementById("messages");
- box.insertAdjacentHTML("beforeend",`<div class="msg user"><div class="msg-avatar">我</div><div class="bubble">${txt.replace(/</g,"&lt;")}</div></div>`);
- ta.value="";
- setTimeout(()=>{
-   box.insertAdjacentHTML("beforeend",`<div class="msg"><div class="msg-avatar">智</div><div class="bubble">结合前面的对话，我会继续沿用“零基础大学生学习人工智能”这一上下文。建议先完成 Python 基础，再进入机器学习概念，最后学习人工智能综合教材。若你希望，我也可以把当前推荐直接拆成按周执行的阅读计划，并优先选择当前可借馆藏。</div></div>`);
-   box.scrollTop=box.scrollHeight;
- },450);
+ const query=txt.toLowerCase();
+ const matches=CATALOG.filter(r=>[r.title,r.creator,r.subject,r.summary].join(" ").toLowerCase().includes(query)).slice(0,4);
+ const suggestions=matches.length?matches:CATALOG.filter(r=>["人工智能","机器学习","地方志"].some(s=>query.includes(s)&&r.subject.includes(s))).slice(0,4);
+ box.insertAdjacentHTML("beforeend",`<div class="msg user"><div class="msg-avatar">我</div><div class="bubble">${esc(txt)}</div></div>`);
+ const result=suggestions.length?`在当前目录样本中找到 ${suggestions.length} 条相关记录：<br>${suggestions.map(r=>`<button class="row-action" data-record="${esc(r.id)}">${esc(r.title)} · ${esc(r.id)}</button>`).join("<br>")}`:"当前目录样本没有匹配记录。可以到知识服务系统继续检索。";
+ box.insertAdjacentHTML("beforeend",`<div class="msg"><div class="msg-avatar">录</div><div class="bubble">${result}<br><small>这里提供目录匹配，不生成模型回答；正式智能问答请使用「进入知识服务」。</small></div></div>`);
+ ta.value="";box.scrollTop=box.scrollHeight;
 }
 document.getElementById("sendBtn").addEventListener("click",sendChat);
 document.getElementById("chatText").addEventListener("keydown",e=>{if(e.key==="Enter"&&!e.shiftKey){e.preventDefault();sendChat();}});
-document.querySelectorAll(".switch").forEach(sw=>sw.addEventListener("click",()=>sw.classList.toggle("on")));
+document.querySelectorAll(".switch").forEach(sw=>sw.addEventListener("click",()=>showNotice("设备控制尚未接入","当前开关反映历史业务样本，不能在此页面变更设备状态。")));
 
 function toast(msg){
  const t=document.getElementById("toast"); t.textContent=msg; t.classList.add("show");
  setTimeout(()=>t.classList.remove("show"),1800);
 }
 document.addEventListener("click",e=>{
- if(e.target.classList.contains("resource-detail")) document.getElementById("resourceDrawer").classList.add("show");
+ const target=e.target.closest("[data-record]");
+ if(target) showResource(target.dataset.record);
+ const external=e.target.closest("#resourceDrawer [data-system]");
+ if(external) openExternalSystem(external.dataset.system);
 });
 document.getElementById("drawerClose").addEventListener("click",()=>document.getElementById("resourceDrawer").classList.remove("show"));
 document.getElementById("resourceDrawer").addEventListener("click",e=>{if(e.target.id==="resourceDrawer")e.currentTarget.classList.remove("show")});
@@ -1399,7 +1422,7 @@ document.getElementById("resourceDrawer").addEventListener("click",e=>{if(e.targ
 const assetModal=document.getElementById("assetModal");
 document.getElementById("assetRegisterBtn").addEventListener("click",()=>assetModal.classList.add("show"));
 ["assetModalClose","assetCancel"].forEach(id=>document.getElementById(id).addEventListener("click",()=>assetModal.classList.remove("show")));
-document.getElementById("assetSubmit").addEventListener("click",()=>{assetModal.classList.remove("show");toast("数字资产登记已提交")});
+document.getElementById("assetSubmit").addEventListener("click",()=>{assetModal.classList.remove("show");showNotice("登记未提交","当前页面没有连接资产登记服务。请在正式业务系统完成登记与确认。")});
 
 const notifyModal=document.getElementById("notifyModal");
 document.getElementById("notifyBtn").addEventListener("click",()=>notifyModal.classList.add("show"));
@@ -1414,7 +1437,7 @@ document.getElementById("globalSearch").addEventListener("keydown",e=>{
    else if(/问答|智|智能/.test(v)) gotoPage("qa");
    else if(/推荐|画像|偏好/.test(v)) gotoPage("recommend");
    else if(/数据|报表|分析/.test(v)) gotoPage("analytics");
-   else gotoPage("resources");
+   else {gotoPage("resources");document.getElementById("resourceKeyword").value=v;renderCatalog(true)}
    toast("已定位到相关功能");
  }
 });
@@ -1427,11 +1450,11 @@ document.querySelectorAll(".scene-tab").forEach(t=>{
   t.addEventListener("click",()=>{document.querySelectorAll(".scene-tab").forEach(x=>x.classList.remove("active"));t.classList.add("active");toast("已切换到「"+t.textContent+"」场景方案");});
 });
 const fakeUploadBtn=document.getElementById("fakeUploadBtn");
-if(fakeUploadBtn) fakeUploadBtn.addEventListener("click",()=>toast("已模拟选择 12 个资源文件，进入采集队列"));
+if(fakeUploadBtn) fakeUploadBtn.addEventListener("click",()=>showNotice("采集接口待接入","请在资源业务系统完成文件上传；本页面不会将文件提交到服务器。"));
 const newCollectBtn=document.getElementById("newCollectBtn");
-if(newCollectBtn) newCollectBtn.addEventListener("click",()=>toast("已创建新的资源采集任务"));
+if(newCollectBtn) newCollectBtn.addEventListener("click",()=>showNotice("采集接口待接入","可先核对资源字段和采集规则，正式任务请进入资源业务系统创建。"));
 const refreshRecBtn=document.getElementById("refreshRecBtn");
-if(refreshRecBtn) refreshRecBtn.addEventListener("click",()=>toast("已根据最新偏好与情境刷新推荐结果"));
+if(refreshRecBtn) refreshRecBtn.addEventListener("click",()=>showNotice("推荐服务未接入","此页展示推荐字段与策略结构；实时结果请在知识服务系统查看。"));
 
 
 document.querySelectorAll("[data-goto='ledger']").forEach(el=>el.addEventListener("click",()=>gotoPage("ledger")));
@@ -1461,11 +1484,11 @@ updateSysClock(); setInterval(updateSysClock,30000);
   }
   const refreshBtn=document.getElementById("dashboardRefreshBtn");
   const refreshText=document.getElementById("lastRefreshText");
-  if(refreshText) refreshText.textContent="最近更新 "+nowHM();
+  if(refreshText) refreshText.textContent="本地数据批次 · 2026-09-21";
   if(refreshBtn){
     refreshBtn.addEventListener("click",()=>{
-      if(refreshText) refreshText.textContent="最近更新 "+nowHM();
-      if(typeof toast==="function") toast("数据已刷新");
+      if(refreshText) refreshText.textContent="本地数据批次 · 2026-09-21";
+      showNotice("已重新载入本地数据","此操作未向资源、知识服务或设备系统发起实时查询。") ;
     });
   }
 
@@ -1476,54 +1499,126 @@ updateSysClock(); setInterval(updateSysClock,30000);
 
   if(execBtn){
     execBtn.addEventListener("click",()=>{
-      execBtn.disabled=true;
-      execBtn.textContent="执行中...";
-      if(execState) execState.textContent="指令下发中";
-      setTimeout(()=>{
-        execBtn.disabled=false;
-        execBtn.textContent="执行调控";
-        if(execState) execState.textContent="执行完成 "+nowHM();
-        if(feedback){
-          feedback.innerHTML=
-            '<div class="activity-item"><div class="activity-ico">空</div><div><b>空调控制</b><p>设定温度调整为 24.0°C</p></div><span class="tag green">成功</span></div>'+
-            '<div class="activity-item"><div class="activity-ico">风</div><div><b>新风系统</b><p>新风量在当前基础上提升 15%</p></div><span class="tag green">成功</span></div>'+
-            '<div class="activity-item"><div class="activity-ico">同</div><div><b>结果同步</b><p>调控结果已同步至数据分析服务</p></div><span class="tag blue">完成</span></div>';
-        }
-        if(typeof toast==="function") toast("调控指令执行完成");
-      },900);
+      if(execState) execState.textContent="待接口接入";
+      showNotice("未下发设备指令","设备网关接口尚未连接。当前平台只展示台账与策略，不会向空调、新风或书架发送控制命令。") ;
     });
   }
 
   if(recalcBtn){
     recalcBtn.addEventListener("click",()=>{
-      recalcBtn.disabled=true;
-      recalcBtn.textContent="计算中...";
-      setTimeout(()=>{
-        recalcBtn.disabled=false;
-        recalcBtn.textContent="重新计算策略";
-        if(typeof toast==="function") toast("策略已重新计算：保持当前舒适度优化方案");
-      },700);
+      showNotice("策略计算接口待接入","当前仅能查看预置的策略字段和处理流程，尚未执行新的计算。") ;
     });
   }
 })();
+
+// 本地目录与任务台账。记录可检索、查看和导出；不代表实时馆藏或正式检测结果。
+const CATALOG = [
+ ["R-P-260921-001","人工智能：一种现代的方法","纸质","图书","Stuart Russell、Peter Norvig","人工智能 / 计算机","中文图书外借","在架","2026-09-21","TP18","馆内借阅","人工智能基础理论、搜索、知识表示、机器学习与智能体。"],
+ ["R-P-260921-002","机器学习","纸质","图书","周志华","机器学习 / 人工智能","中文图书外借","在架","2026-09-20","TP181","馆内借阅","系统介绍机器学习方法、模型评估与常见算法。"],
+ ["R-P-260921-003","Python编程：从入门到实践","纸质","图书","Eric Matthes","程序设计 / Python","中文图书外借","在架","2026-09-18","TP311","馆内借阅","面向初学者的 Python 语言与项目实践读物。"],
+ ["R-P-260921-004","深度学习","纸质","图书","Ian Goodfellow 等","深度学习 / 计算机","中文保存本","在架","2026-09-17","TP181","馆内阅览","深度学习基本概念、优化方法与应用。"],
+ ["R-P-260921-005","中国图书馆分类法使用手册","纸质","工具书","编目业务组","分类编目 / 图书馆学","中文保存本","在架","2026-09-16","G254","馆内阅览","分类标引、编目规范及业务参考。"],
+ ["R-P-260921-006","数据可视化与分析","纸质","图书","资源编目组","数据分析 / 可视化","中文图书外借","在架","2026-09-19","TP391","馆内借阅","数据探索、可视化表达与分析流程。"],
+ ["R-P-260921-007","长江流域文化研究","纸质","图书","地方文献整理组","长江文化 / 地方文献","中文保存本","在架","2026-09-15","K296","馆内阅览","区域文化专题研究及相关馆藏索引。"],
+ ["R-P-260921-008","数字人文导论","纸质","图书","学科服务组","数字人文 / 知识组织","中文图书外借","在架","2026-09-20","G250","馆内借阅","数字人文研究方法、数据组织与服务实践。"],
+ ["R-P-260921-009","信息资源管理概论","纸质","图书","资源编目组","信息资源 / 管理","中文图书外借","待复核","2026-09-21","G203","编目复核中","目录字段需要人工核对后再用于借还业务。"],
+ ["R-P-260921-010","湖北地方志目录索引","纸质","索引","地方文献整理组","湖北地方志 / 目录","中文保存本","在架","2026-09-14","K296.3","馆内阅览","地方志纸质目录与数字对象的关联入口。"],
+ ["R-E-260921-011","学术期刊联合检索入口","电子","数据库入口","电子资源中心","学术期刊 / 文献检索","数据库入口","可访问","2026-09-21","DB-JOURNAL","机构授权","聚合多学科电子期刊的检索入口；具体权限以原系统为准。"],
+ ["R-E-260921-012","电子图书专题书架","电子","电子书","电子资源中心","电子书 / 阅读","数据库入口","可访问","2026-09-20","EB-TOPIC","机构授权","按主题聚合电子出版物与在线阅读入口。"],
+ ["R-E-260921-013","数字报刊检索库","电子","数据库入口","电子资源中心","报刊 / 历史文献","数据库入口","可访问","2026-09-19","DB-NEWS","机构授权","提供报刊目录检索与可用性信息。"],
+ ["R-E-260921-014","人工智能专题文献导航","电子","专题导航","学科服务组","人工智能 / 文献导航","数据库入口","可访问","2026-09-21","NAV-AI","机构授权","组织人工智能主题的电子资源与检索路径。"],
+ ["R-E-260921-015","知识服务参考资源索引","电子","目录索引","知识服务组","知识组织 / 参考资源","数据库入口","待复核","2026-09-18","IDX-KS","内部使用","部分来源与授权字段待核对。"],
+ ["R-E-260921-016","地方文献电子索引","电子","目录索引","地方文献整理组","地方文献 / 湖北","数据库入口","可访问","2026-09-20","IDX-HB","机构授权","关联纸质地方志、数字图像与专题资源。"],
+ ["R-D-260921-017","湖北地方文化数字图像集","数字","图像","数字资源部","地方文化 / 图像","数字资源库","已归档","2026-09-20","IMG-HB","馆内访问","地方文化图像对象的目录与元数据集合。"],
+ ["R-D-260921-018","馆藏建筑三维资源模型","数字","三维模型","数字资源部","建筑 / 三维","数字资源库","已归档","2026-09-21","OBJ-BLD","馆内访问","馆舍建筑三维模型及版本记录。"],
+ ["R-D-260921-019","非遗口述史音频档案","数字","音频","数字资源部","非物质文化遗产 / 口述史","数字资源库","待复核","2026-09-21","AUD-IH","限定访问","音频资源的授权与元数据完整性正在复核。"],
+ ["R-D-260921-020","地方志扫描文献批次","数字","PDF文献","数字资源部","地方志 / 文献","数字资源库","待复核","2026-09-21","DOC-GAZ","馆内访问","扫描对象的清晰度、页码与元数据需要复核。"],
+ ["R-D-260921-021","长江文化影像资料集","数字","视频","数字资源部","长江文化 / 影像","数字资源库","已归档","2026-09-19","VID-CJ","限定访问","专题影像对象、版权与可访问范围记录。"],
+ ["R-D-260921-022","古籍版面图像样本","数字","图像","数字资源部","古籍 / 图像","数字资源库","已归档","2026-09-18","IMG-OLD","馆内访问","古籍版面影像、采集批次和校对状态。"],
+ ["R-D-260921-023","馆舍导览音频包","数字","音频","公共服务组","导览 / 音频","数字资源库","已归档","2026-09-17","AUD-GUIDE","公共访问","馆舍导览语音资源与多终端版本。"],
+ ["R-D-260921-024","数字展陈素材库","数字","多媒体","数字资源部","展陈 / 多媒体","数字资源库","已归档","2026-09-20","MM-EXHIBIT","内部使用","数字展陈的图像、音视频及素材版本管理。"],
+ ["R-S-260921-025","湖北地方志数字合集","特色","专题合集","地方文献整理组","湖北地方志 / 专题","专题资源库","已归档","2026-09-21","COL-HB","馆内访问","地方志文献、图像与目录记录的专题关联。"],
+ ["R-S-260921-026","荆楚非遗专题资源集","特色","专题合集","地方文献整理组","荆楚文化 / 非遗","专题资源库","待复核","2026-09-21","COL-IH","限定访问","非遗口述、图片、文字资料与授权信息。"],
+ ["R-S-260921-027","武汉历史地图专题","特色","地图","地方文献整理组","武汉 / 历史地图","专题资源库","已归档","2026-09-18","MAP-WH","馆内访问","历史地图目录、版本与数字对象索引。"],
+ ["R-S-260921-028","长江文化专题资料","特色","专题合集","地方文献整理组","长江文化 / 历史","专题资源库","已归档","2026-09-19","COL-CJ","馆内访问","区域文化相关书目、影像与图像资源关联。"],
+ ["R-S-260921-029","湖北近代报刊专题","特色","报刊","地方文献整理组","湖北 / 报刊","专题资源库","已归档","2026-09-17","NEWS-HB","馆内访问","湖北近代报刊资源的目录与可用性索引。"],
+ ["R-S-260921-030","馆藏珍本保护档案","特色","档案","特藏保护组","珍本 / 保护","专题资源库","待复核","2026-09-16","ARC-RARE","限定访问","珍本保护状态、数字影像与授权记录。"]
+].map(([id,title,type,format,creator,subject,location,status,updated,classification,rights,summary])=>({id,title,type,format,creator,subject,location,status,updated,classification,rights,summary}));
+
+const PROCESSING = [
+ ["PR-260921-01","地方志扫描文献加工","PDF文献",2184,2164,20,"采集 → 校验 → 存储","待复核","09-21 15:26"],
+ ["PR-260921-02","非遗口述史音频转码","音频",328,320,8,"转码 → 复核","待复核","09-21 14:48"],
+ ["PR-260921-03","专题数据库增量映射","目录",9420,9420,0,"字段映射 → 入库","已完成","09-21 14:12"],
+ ["PR-260921-04","历史地图图像清晰度检查","图像",516,514,2,"采集 → 图像检查","已完成","09-21 13:42"],
+ ["PR-260921-05","数字展陈素材规范化","多媒体",186,178,8,"格式转换 → 校验","处理中","09-21 13:14"],
+ ["PR-260921-06","古籍版面图像元数据提取","图像",874,862,12,"OCR → 字段抽取","处理中","09-21 11:58"],
+ ["PR-260920-07","长江影像资源分片存储","视频",74,74,0,"转码 → 分片存储","已完成","09-20 17:52"],
+ ["PR-260920-08","电子书目录去重","电子书",1256,1253,3,"匹配 → 复核","待复核","09-20 16:39"],
+ ["PR-260920-09","地方文献授权校验","文献",448,438,10,"授权校验 → 归档","待复核","09-20 15:41"],
+ ["PR-260920-10","馆舍导览音频字幕同步","音频",92,92,0,"对齐 → 入库","已完成","09-20 10:36"],
+ ["PR-260919-11","报刊影像摘要校验","图像",1204,1204,0,"摘要校验 → 归档","已完成","09-19 16:27"],
+ ["PR-260919-12","三维模型格式转换","三维模型",62,0,0,"排队 → 转换","排队中","09-19 09:10"]
+].map(([id,name,type,total,passed,issues,flow,status,updated])=>({id,name,type,total,passed,issues,flow,status,updated}));
+
+const DEVICES = [
+ ["GW-HB-01","网关","中心机房","MQTT / HTTPS","09-21 15:20","正常","设备运维组"],
+ ["GW-HB-02","网关","四层东区","MQTT / CoAP","09-21 15:19","正常","设备运维组"],
+ ["GW-HB-03","网关","二层阅览区","MQTT / HTTPS","09-21 15:18","正常","设备运维组"],
+ ["ENV-4F-021","环境传感器","四层东区","CoAP","09-21 15:19","正常","设施运维组"],
+ ["ENV-4F-022","环境传感器","四层东区","CoAP","09-21 15:17","待巡检","设施运维组"],
+ ["ENV-2F-008","环境传感器","二层阅览区","MQTT","09-21 15:20","正常","设施运维组"],
+ ["SHELF-4F-019","RFID书架","四层东区","MQTT","09-21 15:12","告警","馆藏设备组"],
+ ["SHELF-4F-020","RFID书架","四层东区","MQTT","09-21 15:18","正常","馆藏设备组"],
+ ["SHELF-3F-031","RFID书架","三层西区","MQTT","09-21 15:20","正常","馆藏设备组"],
+ ["CAM-1F-004","监控设备","一层入口","HTTPS","09-21 15:18","正常","安防运维组"],
+ ["CAM-4F-011","监控设备","四层东区","HTTPS","09-21 15:11","告警","安防运维组"],
+ ["CAM-3F-006","监控设备","三层西区","HTTPS","09-21 15:19","正常","安防运维组"],
+ ["CAB-1F-006","自助书柜","一层服务区","MQTT","09-21 15:20","正常","馆藏设备组"],
+ ["CAB-2F-002","自助书柜","二层阅览区","MQTT","09-21 15:16","待巡检","馆藏设备组"]
+].map(([id,type,area,protocol,last,status,owner])=>({id,type,area,protocol,last,status,owner}));
+
+const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));
+const tagClass=s=>s==="在架"||s==="可访问"||s==="已完成"||s==="正常"?"green":s==="告警"?"red":s==="待复核"||s==="待巡检"?"orange":"blue";
+let noticeTimer, resourcePage=1, currentResources=[];
+function showNotice(title,detail){const n=document.getElementById("noticeArea");n.innerHTML=`<b>${esc(title)}</b>${esc(detail)}`;n.classList.add("show");clearTimeout(noticeTimer);noticeTimer=setTimeout(()=>n.classList.remove("show"),6500)}
+function showResource(id){const r=CATALOG.find(item=>item.id===id);if(!r)return;const f=[['记录编号',r.id],['资源类型',r.type+' / '+r.format],['责任者',r.creator],['主题词',r.subject],['分类或内部标识',r.classification],['馆藏 / 来源',r.location],['状态',r.status],['访问范围',r.rights],['目录更新时间',r.updated]];document.getElementById('recordDetail').innerHTML=`<div class="detail-title">${esc(r.title)}</div><p style="color:#647186;font-size:12px;line-height:1.65">${esc(r.summary)}</p><div class="detail-grid">${f.map(([k,v])=>`<div><small>${esc(k)}</small><b>${esc(v)}</b></div>`).join('')}</div><div class="detail-section"><h4>关联操作</h4><p style="color:#6c7889;font-size:11px">本地详情用于核对字段结构；借还、全文及授权结果以原业务系统为准。</p><button class="btn primary" data-system="resource" type="button">进入资源业务系统</button></div>`;document.getElementById('resourceDrawer').classList.add('show')}
+function renderCatalog(reset=false){if(reset)resourcePage=1;const q=document.getElementById('resourceKeyword').value.trim().toLowerCase(),type=document.getElementById('resourceType').value,loc=document.getElementById('resourceLocation').value,status=document.getElementById('resourceStatus').value;currentResources=CATALOG.filter(r=>(!q||[r.id,r.title,r.creator,r.subject,r.summary,r.classification].join(' ').toLowerCase().includes(q))&&(!type||r.type===type)&&(!loc||r.location===loc)&&(!status||r.status===status));const pages=Math.max(1,Math.ceil(currentResources.length/10));resourcePage=Math.min(resourcePage,pages);const page=currentResources.slice((resourcePage-1)*10,resourcePage*10);document.getElementById('resourceRows').innerHTML=page.length?page.map(r=>`<tr><td class="title-cell"><b>${esc(r.title)}</b><small>${esc(r.id)}</small></td><td>${esc(r.type)}<br><small>${esc(r.format)}</small></td><td>${esc(r.creator)}</td><td>${esc(r.subject)}</td><td>${esc(r.location)}<br><span class="tag ${tagClass(r.status)}">${esc(r.status)}</span></td><td>${esc(r.updated)}</td><td><button class="row-action" data-record="${esc(r.id)}" type="button">查看详情</button></td></tr>`).join(''):'<tr><td colspan="7" class="empty-state">没有符合条件的记录，请调整检索词或筛选条件。</td></tr>';document.getElementById('resourceResultCount').textContent=`共 ${currentResources.length} 条记录，显示 ${page.length?((resourcePage-1)*10+1):0}–${(resourcePage-1)*10+page.length} 条`;document.getElementById('resourcePageLabel').textContent=`${resourcePage} / ${pages}`;document.getElementById('resourcePrevBtn').disabled=resourcePage<=1;document.getElementById('resourceNextBtn').disabled=resourcePage>=pages;document.getElementById('resourceFilterMeta').textContent=`当前筛选：${[q&&'关键词 '+q,type&&'类型 '+type,loc&&'位置 '+loc,status&&'状态 '+status].filter(Boolean).join(' / ')||'全部目录记录'}`}
+function csvDownload(filename,headers,rows){const safe=v=>{let x=String(v??'');if(/^[=+\-@]/.test(x))x="'"+x;return '"'+x.replace(/"/g,'""')+'"'};const body='\ufeff'+[headers,...rows].map(row=>row.map(safe).join(',')).join('\r\n');const url=URL.createObjectURL(new Blob([body],{type:'text/csv;charset=utf-8'}));const link=document.createElement('a');link.href=url;link.download=filename;document.body.appendChild(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),1000)}
+function renderProcessing(){const q=document.getElementById('processingKeyword').value.trim().toLowerCase(),s=document.getElementById('processingStatus').value;const items=PROCESSING.filter(r=>(!q||[r.id,r.name,r.type].join(' ').toLowerCase().includes(q))&&(!s||r.status===s));document.getElementById('processingRows').innerHTML=items.length?items.map(r=>`<tr><td>${esc(r.id)}</td><td class="title-cell"><b>${esc(r.name)}</b></td><td>${esc(r.type)}</td><td>${r.total.toLocaleString('zh-CN')}</td><td>${r.passed.toLocaleString('zh-CN')} / ${r.issues}</td><td>${esc(r.flow)}</td><td><span class="tag ${tagClass(r.status)}">${esc(r.status)}</span></td><td>${esc(r.updated)}</td></tr>`).join(''):'<tr><td colspan="8" class="empty-state">无匹配的加工批次。</td></tr>';document.getElementById('processingCount').textContent=`共 ${items.length} 个批次 · 异常条目 ${items.reduce((n,r)=>n+r.issues,0)}`;return items}
+function renderDevices(){const q=document.getElementById('deviceKeyword').value.trim().toLowerCase(),t=document.getElementById('deviceType').value,s=document.getElementById('deviceStatus').value;const items=DEVICES.filter(r=>(!q||[r.id,r.type,r.area,r.owner].join(' ').toLowerCase().includes(q))&&(!t||r.type===t)&&(!s||r.status===s));document.getElementById('deviceRows').innerHTML=items.length?items.map(r=>`<tr><td><b>${esc(r.id)}</b></td><td>${esc(r.type)}</td><td>${esc(r.area)}</td><td>${esc(r.protocol)}</td><td>${esc(r.last)}</td><td><span class="tag ${tagClass(r.status)}">${esc(r.status)}</span></td><td>${esc(r.owner)}</td></tr>`).join(''):'<tr><td colspan="7" class="empty-state">无匹配的设备记录。</td></tr>';document.getElementById('deviceCount').textContent=`共 ${items.length} 条设备记录 · 告警 ${items.filter(r=>r.status==='告警').length} 条`;return items}
+
+document.getElementById('catalogCount').textContent=CATALOG.length.toLocaleString('zh-CN');
+document.getElementById('catalogQuality').innerHTML=`<div class="data-tile"><small>目录记录</small><strong>${CATALOG.length}</strong><span>纸质 ${CATALOG.filter(r=>r.type==='纸质').length} · 数字 ${CATALOG.filter(r=>r.type==='数字').length}</span></div><div class="data-tile"><small>待复核记录</small><strong>${CATALOG.filter(r=>r.status==='待复核').length}</strong><span>可按状态定位详情</span></div><div class="data-tile"><small>已登记来源</small><strong>${new Set(CATALOG.map(r=>r.location)).size}</strong><span>馆藏地与资源库</span></div>`;
+renderCatalog();renderProcessing();renderDevices();
+document.getElementById('resourceSearchBtn').addEventListener('click',()=>renderCatalog(true));
+document.getElementById('resourceKeyword').addEventListener('keydown',e=>{if(e.key==='Enter')renderCatalog(true)});
+['resourceType','resourceLocation','resourceStatus'].forEach(id=>document.getElementById(id).addEventListener('change',()=>renderCatalog(true)));
+document.getElementById('resourceResetBtn').addEventListener('click',()=>{document.getElementById('resourceKeyword').value='';['resourceType','resourceLocation','resourceStatus'].forEach(id=>document.getElementById(id).value='');renderCatalog(true)});
+document.getElementById('resourcePrevBtn').addEventListener('click',()=>{resourcePage--;renderCatalog()});document.getElementById('resourceNextBtn').addEventListener('click',()=>{resourcePage++;renderCatalog()});
+document.getElementById('resourceExportBtn').addEventListener('click',()=>csvDownload('资源目录_当前筛选.csv',['记录编号','题名','类型','载体','责任者','主题','馆藏位置','状态','更新日期','内部标识','访问范围'],currentResources.map(r=>[r.id,r.title,r.type,r.format,r.creator,r.subject,r.location,r.status,r.updated,r.classification,r.rights])));
+['processingKeyword','processingStatus'].forEach(id=>document.getElementById(id).addEventListener(id==='processingKeyword'?'input':'change',renderProcessing));
+document.getElementById('processingExportBtn').addEventListener('click',()=>csvDownload('加工任务台账_当前筛选.csv',['批次','任务','资源类型','对象数','通过数','异常数','流向','状态','更新时间'],renderProcessing().map(r=>[r.id,r.name,r.type,r.total,r.passed,r.issues,r.flow,r.status,r.updated])));
+['deviceKeyword','deviceType','deviceStatus'].forEach(id=>document.getElementById(id).addEventListener(id==='deviceKeyword'?'input':'change',renderDevices));
+document.getElementById('deviceExportBtn').addEventListener('click',()=>csvDownload('设备台账_当前筛选.csv',['设备编号','类型','区域','协议','最近记录','状态','责任单位'],renderDevices().map(r=>[r.id,r.type,r.area,r.protocol,r.last,r.status,r.owner])));
+document.getElementById('integrationRefreshBtn').addEventListener('click',()=>showNotice('接入配置','资源与知识服务已配置外部业务入口；实时接口、设备控制与链上查询尚未连接。'));
+document.getElementById('integrationLogBtn').addEventListener('click',()=>showNotice('接入说明','当前部署为静态页面。业务运行日志请在各原系统查询；此处仅保留本地目录与台账样本。'));
+document.getElementById('deviceStrategyBtn').addEventListener('click',()=>showNotice('策略说明','调控策略需由设备服务计算并返回执行回执。当前可查看策略字段、历史日志样本与设备台账。'));
+document.getElementById('newCatalogSearch').addEventListener('click',()=>{document.getElementById('messages').innerHTML='<div class="msg"><div class="msg-avatar">录</div><div class="bubble">已清空本页检索记录。请输入题名、作者或主题词。</div></div>';document.getElementById('chatText').focus()});
+document.getElementById('analyticsExportBtn').addEventListener('click',()=>{const groups=['纸质','电子','数字','特色'].map(type=>[type,CATALOG.filter(r=>r.type===type).length,CATALOG.filter(r=>r.type===type&&r.status==='待复核').length]);csvDownload('资源结构_本地目录样本.csv',['资源类型','目录记录数','待复核数'],groups)});
+document.getElementById('ledgerQueryBtn').addEventListener('click',()=>showNotice('链上查询未接入','交易哈希和节点状态仅为业务字段样本，不是对实际区块链的实时查询。正式核验需连接账本服务。'));
+document.getElementById('ledgerExportBtn').addEventListener('click',()=>csvDownload('可信记录_字段样本.csv',['时间','动作','资产标识','记录状态'],[['2026-09-21 15:22:31','资产登记','DL-HB-20260921-00128','样本记录'],['2026-09-21 15:19:08','资产评估','DL-HB-20260920-00472','样本记录'],['2026-09-21 15:08:12','授权变更','DL-HB-20260920-00204','样本记录']]));
+document.querySelectorAll('[data-goto]').forEach(el=>{if(el.tagName==='A')el.addEventListener('click',e=>e.preventDefault())});
+document.querySelectorAll('.tab:not([data-goto]),.link-btn:not([data-goto])').forEach(el=>el.addEventListener('click',()=>showNotice('视图范围','此页面保留业务字段与历史数据，完整查询及正式操作需要对应业务接口。')));
+document.querySelectorAll('.app-card:not([data-goto])').forEach(el=>el.addEventListener('click',()=>showNotice('应用入口','这项服务由知识服务或资源业务系统提供，统一接口尚未接入当前页面。')));
+document.querySelectorAll('button:not([id]):not([data-goto]):not([data-system]):not([data-record]):not(.scene-tab)').forEach(el=>el.addEventListener('click',()=>{if(el.closest('#resourceDrawer'))return;showNotice('业务操作','该功能需要对应业务服务接口。当前页面不保存业务变更，也不会返回虚构的执行结果。')}));
+});
 
 </script>
 
 <div class="drawer-mask" id="resourceDrawer">
   <div class="drawer">
     <div class="drawer-head"><strong style="font-size:14px">资源详情</strong><button class="modal-close" id="drawerClose">×</button></div>
-    <div class="drawer-body">
-      <div class="detail-hero">
-        <div class="cover-lg"></div>
-        <div><div class="detail-title">人工智能：一种现代的方法</div><div class="detail-meta">责任者：Stuart Russell 等<br/>ISBN：978-7-111-69465-6<br/>分类号：TP18<br/>资源类型：纸质图书</div></div>
-      </div>
-      <div class="detail-section"><h4>馆藏信息</h4><div class="detail-list">
-        <div class="detail-row"><span>中文图书外借 · TP18/128</span><span class="tag green">在架</span></div>
-        <div class="detail-row"><span>中文保存本 · TP18/128</span><span class="tag green">在架</span></div>
-        <div class="detail-row"><span>武汉创新发展研究院分馆</span><span class="tag blue">可借</span></div>
-      </div></div>
-      <div class="detail-section"><h4>关联服务</h4><div class="chips"><span class="chip">内容解析</span><span class="chip">加入阅读方案</span><span class="chip">相似资源</span><span class="chip">知识图谱</span></div></div>
-    </div>
+    <div class="drawer-body" id="recordDetail"></div>
   </div>
 </div>
 
@@ -1550,9 +1645,9 @@ updateSysClock(); setInterval(updateSysClock,30000);
     <div class="modal-head"><h3>消息中心</h3><button class="modal-close" id="notifyClose">×</button></div>
     <div class="modal-body">
       <div class="activity">
-        <div class="activity-item"><div class="activity-ico">告</div><div><b>设备异常提醒</b><p>RFID书架 SHELF-4F-019 上报超时</p></div><span class="activity-time">13分钟前</span></div>
-        <div class="activity-item"><div class="activity-ico">任</div><div><b>加工任务完成</b><p>专题数据库增量导入已完成</p></div><span class="activity-time">22分钟前</span></div>
-        <div class="activity-item"><div class="activity-ico">数</div><div><b>日报已生成</b><p>昨日运营分析日报已生成</p></div><span class="activity-time">今天 08:00</span></div>
+        <div class="activity-item"><div class="activity-ico">告</div><div><b>设备告警记录</b><p>RFID书架 SHELF-4F-019 上报超时</p></div><span class="activity-time">09-21</span></div>
+        <div class="activity-item"><div class="activity-ico">任</div><div><b>加工任务记录</b><p>专题数据库增量导入已完成</p></div><span class="activity-time">09-21</span></div>
+        <div class="activity-item"><div class="activity-ico">数</div><div><b>统计报表字段</b><p>正式日报需从业务系统生成与核验</p></div><span class="activity-time">09-21</span></div>
       </div>
     </div>
   </div>
@@ -1578,6 +1673,7 @@ updateSysClock(); setInterval(updateSysClock,30000);
 </div>
 
 <div class="toast" id="toast">操作成功</div>
+<div class="notice-area" id="noticeArea" role="status" aria-live="polite"></div>
 
 </body>
 </html>
