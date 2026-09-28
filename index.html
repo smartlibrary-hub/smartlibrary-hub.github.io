@@ -375,40 +375,62 @@ canvas{width:100%;height:100%}
 @media(max-width:860px){.source-bar{align-items:flex-start;flex-direction:column}.data-grid{grid-template-columns:1fr 1fr}.top-actions .pill:nth-last-child(2){display:none}.table{min-width:750px}}
 @media(max-width:600px){.data-grid{grid-template-columns:1fr}.page-head{align-items:flex-start;flex-direction:column}.top-search{width:150px}.top-actions{gap:5px}.content{padding:14px 10px}}
 
+
+/* 统一使用线性业务图标，文字名称仍为主要导航线索 */
+.icon-sprite{position:absolute;width:0;height:0;overflow:hidden}
+.ui-icon{width:19px;height:19px;display:block;flex:none;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.brand-mark{background:none;box-shadow:none;border:1px solid #4c6488;border-radius:7px;width:36px;height:36px;color:#dfeaff}
+.brand-mark .ui-icon{width:24px;height:24px;stroke-width:1.6}
+.nav-ico,.nav-item.active .nav-ico{background:none;color:inherit;border-radius:0!important;width:20px;height:22px}
+.nav-ico .ui-icon{width:18px;height:18px;stroke-width:1.7}
+.nav-item.active .nav-ico{color:#b9cdf7}
+.metric-icon{background:transparent!important;width:27px;height:38px;border-radius:0!important}
+.metric-icon .ui-icon{width:23px;height:23px;stroke-width:1.65}
+.platform-ico{background:transparent!important;width:26px;height:36px;border-radius:0!important}
+.platform-ico .ui-icon{width:23px;height:23px}
+.activity-ico{background:transparent;width:21px;height:24px;border-radius:0!important;color:#718198}
+.activity-ico .ui-icon{width:17px;height:17px}
+.appico,.chain-logo,.gateway-ico,.profile-avatar,.msg-avatar,.up-ico{font-size:0}
+.appico .ui-icon,.chain-logo .ui-icon,.gateway-ico .ui-icon,.profile-avatar .ui-icon,.up-ico .ui-icon{width:23px;height:23px}
+.msg-avatar .ui-icon{width:17px;height:17px}
+.chain-logo,.gateway-ico{background:#f5f8fc;box-shadow:none}
+.platform-card .cap-list{display:none}
+.platform-card{min-height:126px}
 </style>
 </head>
 <body>
+<svg class="icon-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><symbol id="icon-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7c-3-2-6-2-9-1v14c3-1 6-1 9 1 3-2 6-2 9-1V6c-3-1-6-1-9 1Z"/><path d="M12 7v14"/></symbol><symbol id="icon-dashboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></symbol><symbol id="icon-activity" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3-7 4 14 3-7h4"/></symbol><symbol id="icon-library" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5h4v14M10 19V5h4v14M16 19l2-14 3 14M2 21h20"/></symbol><symbol id="icon-inbox" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 13h5l2 3h4l2-3h5"/></symbol><symbol id="icon-workflow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="6" height="6" rx="1"/><rect x="15" y="3" width="6" height="6" rx="1"/><rect x="9" y="15" width="6" height="6" rx="1"/><path d="M6 9v3h6v3M18 9v3h-6"/></symbol><symbol id="icon-database" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.7 4 3 9 3s9-1.3 9-3V5M3 12c0 1.7 4 3 9 3s9-1.3 9-3"/></symbol><symbol id="icon-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7 .4l3-3a5 5 0 0 0-7-7l-1.7 1.7M14 11a5 5 0 0 0-7-.4l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></symbol><symbol id="icon-bookmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v18l-7-4-7 4V4Z"/></symbol><symbol id="icon-message" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11.5a8.5 8.5 0 0 1-8.5 8.5 9 9 0 0 1-4-.9L3 21l1.9-4.5a9 9 0 0 1-.9-4A8.5 8.5 0 0 1 12.5 4 8 8 0 0 1 20 11.5Z"/><path d="M8 12h8"/></symbol><symbol id="icon-route" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="6" r="2"/><circle cx="19" cy="18" r="2"/><path d="M7 6h7a4 4 0 0 1 0 8h-4a4 4 0 0 0 0 4h7"/></symbol><symbol id="icon-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18M7 16v-5M12 16V7M17 16v-8"/></symbol><symbol id="icon-settings" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v2m0 14v2M3 12h2m14 0h2M5.6 5.6 7 7m10 10 1.4 1.4M18.4 5.6 17 7M7 17l-1.4 1.4"/><circle cx="12" cy="12" r="4"/></symbol><symbol id="icon-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></symbol><symbol id="icon-file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h8l5 5v15H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Z"/><path d="M14 2v5h5M8 13h8M8 17h6"/></symbol><symbol id="icon-folder" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6a2 2 0 0 1 2-2h5l2 2h7a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6Z"/></symbol><symbol id="icon-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 9 5-9 5-9-5 9-5ZM3 12l9 5 9-5M3 16l9 5 9-5"/></symbol><symbol id="icon-archive" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="5" rx="1"/><path d="M5 8v13h14V8M10 12h4"/></symbol><symbol id="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></symbol><symbol id="icon-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 10 18H2L12 3Z"/><path d="M12 9v5m0 3h.01"/></symbol><symbol id="icon-list" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></symbol><symbol id="icon-upload" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V3m-5 5 5-5 5 5M4 16v4h16v-4"/></symbol><symbol id="icon-harddrive" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 14h18M7 17h.01M11 17h.01"/></symbol><symbol id="icon-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.4 9 8 11 4.6-2 8-6 8-11V5l-8-3Z"/><path d="m9 12 2 2 4-4"/></symbol><symbol id="icon-network" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/><path d="M12 6v6M5 17l7-5 7 5"/></symbol><symbol id="icon-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4M17 3v4M3 10h18M8 15h3"/></symbol><symbol id="icon-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/></symbol><symbol id="icon-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol><symbol id="icon-bell" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9ZM10 21h4"/></symbol><symbol id="icon-send" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4 20-7ZM11 13 22 2"/></symbol><symbol id="icon-map" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 6 6-3 6 3 6-3v15l-6 3-6-3-6 3V6ZM9 3v15M15 6v15"/></symbol><symbol id="icon-repeat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h13l-3-3m3 3-3 3M20 17H7l3-3m-3 3 3 3"/></symbol><symbol id="icon-gauge" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17a9 9 0 1 1 16 0M8 17h8M12 15l4-6"/></symbol><symbol id="icon-key" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="15" r="4"/><path d="m11 12 9-9 2 2-2 2-2-2-2 2 2 2-2 2-2-2-3 3"/></symbol><symbol id="icon-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c-3 3-3 15 0 18M12 3c3 3 3 15 0 18"/></symbol><symbol id="icon-graduation" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m2 9 10-5 10 5-10 5L2 9ZM6 12v5c4 3 8 3 12 0v-5M22 9v7"/></symbol><symbol id="icon-briefcase" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="14" rx="2"/><path d="M8 7V4h8v3M3 13h18M10 13v2h4v-2"/></symbol><symbol id="icon-compass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m15 9-2 4-4 2 2-4 4-2Z"/></symbol></svg>
 <div class="app">
   <aside class="sidebar">
     <div class="brand">
-      <div class="brand-mark">智</div>
+      <div class="brand-mark"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-book"></use></svg></div>
       <div><div class="brand-title">智慧图书馆一体化平台</div><div class="brand-sub">SMART LIBRARY</div></div>
     </div>
 
     <div class="nav-group">
       <div class="nav-label">工作台</div>
-      <a class="nav-item active" data-page="dashboard"><div class="nav-ico">总</div><span>综合总览</span></a>
-      <a class="nav-item" data-page="integration"><div class="nav-ico">协</div><span>运行中心</span></a>
+      <a class="nav-item active" data-page="dashboard"><div class="nav-ico"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-dashboard"></use></svg></div><span>综合总览</span></a>
+      <a class="nav-item" data-page="integration"><div class="nav-ico"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-activity"></use></svg></div><span>运行中心</span></a>
     </div>
     <div class="nav-group">
       <div class="nav-label">资源管理</div>
-      <a class="nav-item" data-page="resources"><div class="nav-ico">资</div><span>全类型资源</span></a>
-      <a class="nav-item" data-page="acquisition"><div class="nav-ico">采</div><span>资源采集</span></a>
-      <a class="nav-item" data-page="processing"><div class="nav-ico">加</div><span>数字资源加工</span></a>
-      <a class="nav-item" data-page="storage"><div class="nav-ico">存</div><span>存储与资产</span></a>
-      <a class="nav-item" data-page="ledger"><div class="nav-ico">链</div><span>可信账本</span></a>
+      <a class="nav-item" data-page="resources"><div class="nav-ico"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-library"></use></svg></div><span>全类型资源</span></a>
+      <a class="nav-item" data-page="acquisition"><div class="nav-ico"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-inbox"></use></svg></div><span>资源采集</span></a>
+      <a class="nav-item" data-page="processing"><div class="nav-ico"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-workflow"></use></svg></div><span>数字资源加工</span></a>
+      <a class="nav-item" data-page="storage"><div class="nav-ico"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-database"></use></svg></div><span>存储与资产</span></a>
+      <a class="nav-item" data-page="ledger"><div class="nav-ico"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-link"></use></svg></div><span>可信账本</span></a>
     </div>
     <div class="nav-group">
       <div class="nav-label">知识服务</div>
-      <a class="nav-item" data-page="recommend"><div class="nav-ico">荐</div><span>个性化推荐</span></a>
-      <a class="nav-item" data-page="qa"><div class="nav-ico">问</div><span>智能问答</span></a>
-      <a class="nav-item" data-page="plan"><div class="nav-ico">读</div><span>阅读方案</span></a>
+      <a class="nav-item" data-page="recommend"><div class="nav-ico"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-bookmark"></use></svg></div><span>个性化推荐</span></a>
+      <a class="nav-item" data-page="qa"><div class="nav-ico"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-message"></use></svg></div><span>智能问答</span></a>
+      <a class="nav-item" data-page="plan"><div class="nav-ico"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-route"></use></svg></div><span>阅读方案</span></a>
     </div>
     <div class="nav-group">
       <div class="nav-label">智慧管理</div>
-      <a class="nav-item" data-page="analytics"><div class="nav-ico">数</div><span>数据驾驶舱</span></a>
-      <a class="nav-item" data-page="devices"><div class="nav-ico">设</div><span>设备智能调控</span></a>
-      <a class="nav-item" data-page="apps"><div class="nav-ico">应</div><span>应用中心</span></a>
+      <a class="nav-item" data-page="analytics"><div class="nav-ico"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-chart"></use></svg></div><span>数据驾驶舱</span></a>
+      <a class="nav-item" data-page="devices"><div class="nav-ico"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-settings"></use></svg></div><span>设备智能调控</span></a>
+      <a class="nav-item" data-page="apps"><div class="nav-ico"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-grid"></use></svg></div><span>应用中心</span></a>
     </div>
     <div class="side-bottom"><div class="demo-badge"><i class="demo-dot"></i><span>统一服务入口 · 业务工作台</span></div></div>
   </aside>
@@ -426,7 +448,7 @@ canvas{width:100%;height:100%}
     </header>
 
     <div class="content">
-      <div class="source-bar" role="status"><div><strong>数据口径</strong>　当前为导入的业务样本与目录记录；本页面尚未连接实时资源、知识服务、账本或设备接口。涉及正式业务办理，请从对应系统入口进入。</div><a data-goto="integration" href="#integration">查看接入状态 →</a></div>
+      <div class="source-bar" role="status"><div><strong>数据范围</strong>　此工作台展示导入的目录、加工与设备记录。馆藏状态和业务办理请以各业务系统为准。</div><a data-goto="integration" href="#integration">系统入口 →</a></div>
 
       <!-- Dashboard -->
       <section class="page active" id="dashboard">
@@ -452,26 +474,26 @@ canvas{width:100%;height:100%}
 
         <div style="height:14px"></div>
         <div class="grid cols-4">
-          <div class="card metric"><div class="metric-icon blue">资</div><div><div class="metric-label">资源总量 · 背景系统</div><div class="metric-value">约 61 万</div><div class="metric-foot">以资源业务系统实际查询为准</div></div></div>
-          <div class="card metric"><div class="metric-icon green">录</div><div><div class="metric-label">本地目录记录</div><div class="metric-value" id="catalogCount">—</div><div class="metric-foot">可筛选、查看详情与导出</div></div></div>
-          <div class="card metric"><div class="metric-icon orange">类</div><div><div class="metric-label">资源类型</div><div class="metric-value">4</div><div class="metric-foot">纸质 / 电子 / 数字 / 特色</div></div></div>
-          <div class="card metric"><div class="metric-icon purple">源</div><div><div class="metric-label">接入来源</div><div class="metric-value">2</div><div class="metric-foot">资源系统与知识服务入口</div></div></div>
+          <div class="card metric"><div class="metric-icon blue"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-library"></use></svg></div><div><div class="metric-label">资源总量 · 背景系统</div><div class="metric-value">约 61 万</div><div class="metric-foot">以资源业务系统实际查询为准</div></div></div>
+          <div class="card metric"><div class="metric-icon green"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-list"></use></svg></div><div><div class="metric-label">本地目录记录</div><div class="metric-value" id="catalogCount">—</div><div class="metric-foot">可筛选、查看详情与导出</div></div></div>
+          <div class="card metric"><div class="metric-icon orange"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-grid"></use></svg></div><div><div class="metric-label">资源类型</div><div class="metric-value">4</div><div class="metric-foot">纸质 / 电子 / 数字 / 特色</div></div></div>
+          <div class="card metric"><div class="metric-icon purple"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-link"></use></svg></div><div><div class="metric-label">接入来源</div><div class="metric-value">2</div><div class="metric-foot">资源系统与知识服务入口</div></div></div>
         </div>
 
         <div style="height:14px"></div>
         <div class="grid cols-3">
           <div class="card platform-card" style="--tone:#edf3ff;--accent:#2f61cf;--wash:#edf3ff">
-            <div class="platform-top"><div class="platform-ico">资</div><div><h3>全类型资源智慧管理</h3><p>纸电数资源统一采集、加工、存储与资产化</p></div></div>
+            <div class="platform-top"><div class="platform-ico"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-grid"></use></svg></div><div><h3>全类型资源智慧管理</h3><p>纸电数资源统一采集、加工、存储与资产化</p></div></div>
             <div class="cap-list"><span class="cap">统一资源</span><span class="cap">数字加工</span><span class="cap">分片存储</span><span class="cap">资产登记</span></div>
             <div class="platform-actions"><button class="external-btn" data-goto="resources">查看</button><button class="external-btn primary" data-system="resource">业务办理</button></div>
           </div>
           <div class="card platform-card" style="--tone:#ecf8f3;--accent:#13865b;--wash:#ecf8f3">
-            <div class="platform-top"><div class="platform-ico">知</div><div><h3>图书馆知识服务</h3><p>语义检索、个性化推荐、智能问答与阅读方案</p></div></div>
+            <div class="platform-top"><div class="platform-ico"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-book"></use></svg></div><div><h3>图书馆知识服务</h3><p>语义检索、个性化推荐、智能问答与阅读方案</p></div></div>
             <div class="cap-list"><span class="cap">用户偏好</span><span class="cap">情境推荐</span><span class="cap">检索增强问答</span><span class="cap">学习路径</span></div>
             <div class="platform-actions"><button class="external-btn" data-goto="recommend">查看</button><button class="external-btn primary" data-system="knowledge">业务办理</button></div>
           </div>
           <div class="card platform-card" style="--tone:#f3effd;--accent:#7056b8;--wash:#f3effd">
-            <div class="platform-top"><div class="platform-ico">数</div><div><h3>大数据管理分析</h3><p>全域数据汇聚、运营监测、趋势分析与辅助决策</p></div></div>
+            <div class="platform-top"><div class="platform-ico"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-chart"></use></svg></div><div><h3>大数据管理分析</h3><p>全域数据汇聚、运营监测、趋势分析与辅助决策</p></div></div>
             <div class="cap-list"><span class="cap">业务统计</span><span class="cap">资源分析</span><span class="cap">运营监测</span><span class="cap">设备数据</span></div>
             <div class="platform-actions"><button class="external-btn" data-goto="analytics">查看</button><button class="external-btn primary" data-system="analytics">业务办理</button></div>
           </div>
@@ -486,9 +508,9 @@ canvas{width:100%;height:100%}
           <div class="card pad">
             <div class="section-title"><h3>待办事项</h3><span class="sub">业务样本台账</span></div>
             <div class="activity">
-              <div class="activity-item"><div class="activity-ico">资</div><div><b>数字资源待审核</b><p>18 项采集资源待完成元数据复核</p></div><span class="badge-count">18</span></div>
-              <div class="activity-item"><div class="activity-ico">设</div><div><b>设备异常待处理</b><p>2 台设备存在上报延迟</p></div><span class="badge-count">2</span></div>
-              <div class="activity-item"><div class="activity-ico">报</div><div><b>运营日报待确认</b><p>今日资源利用分析日报已生成</p></div><span class="badge-count">1</span></div>
+              <div class="activity-item"><div class="activity-ico"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-alert"></use></svg></div><div><b>目录记录待复核</b><p>资源中心有 6 条记录标记为待复核</p></div><span class="badge-count">6</span></div>
+              <div class="activity-item"><div class="activity-ico"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-alert"></use></svg></div><div><b>设备告警记录</b><p>设备台账中有 2 条历史告警</p></div><span class="badge-count">2</span></div>
+              <div class="activity-item"><div class="activity-ico"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-alert"></use></svg></div><div><b>加工批次待复核</b><p>加工台账中有 4 个批次待核对</p></div><span class="badge-count">4</span></div>
             </div>
           </div>
         </div>
@@ -498,9 +520,9 @@ canvas{width:100%;height:100%}
           <div class="card pad">
             <div class="section-title"><h3>业务事件</h3><span class="sub">历史记录样本</span></div>
             <div class="activity">
-              <div class="activity-item"><div class="activity-ico">知</div><div><b>知识服务会话记录</b><p>检索与馆藏匹配记录可在原知识服务系统查询。</p></div><span class="activity-time">09-21</span></div>
-              <div class="activity-item"><div class="activity-ico">加</div><div><b>地方志数字化批次待复核</b><p>批次 PR-260921-01 · 元数据缺失 8 项</p></div><span class="activity-time">09-21</span></div>
-              <div class="activity-item"><div class="activity-ico">设</div><div><b>RFID 书架上报异常记录</b><p>SHELF-4F-019 · 历史告警样本</p></div><span class="activity-time">09-21</span></div>
+              <div class="activity-item"><div class="activity-ico"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-book"></use></svg></div><div><b>知识服务会话记录</b><p>检索与馆藏匹配记录可在原知识服务系统查询。</p></div><span class="activity-time">09-21</span></div>
+              <div class="activity-item"><div class="activity-ico"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-alert"></use></svg></div><div><b>地方志数字化批次待复核</b><p>批次 PR-260921-01 · 元数据缺失 8 项</p></div><span class="activity-time">09-21</span></div>
+              <div class="activity-item"><div class="activity-ico"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-list"></use></svg></div><div><b>RFID 书架上报异常记录</b><p>SHELF-4F-019 · 历史告警样本</p></div><span class="activity-time">09-21</span></div>
             </div>
           </div>
           <div class="card pad">
@@ -517,21 +539,21 @@ canvas{width:100%;height:100%}
 <div style="height:14px"></div>
 <div class="grid cols-2">
   <div class="card pad">
-    <div class="section-title"><h3>运营分析线索</h3><span class="sub">基于业务样本整理</span></div>
+    <div class="section-title"><h3>待核对记录</h3><span class="sub">导入台账 · 2026-09-21</span></div>
     <div class="activity">
       <div class="activity-item">
-        <div class="activity-ico">热</div>
-        <div><b>人工智能主题资源热度持续上升</b><p>近 7 日相关资源访问与借阅保持增长，建议提高相关资源推荐曝光并补充可借复本。</p></div>
-        <span class="tag blue">资源</span>
+        <div class="activity-ico"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-workflow"></use></svg></div>
+        <div><b>地方志扫描文献批次</b><p>资源记录 R-D-260921-020，状态为待复核。</p></div>
+        <span class="tag blue">目录</span>
       </div>
       <div class="activity-item">
-        <div class="activity-ico">客</div>
-        <div><b>四层东区下午客流处于高位</b><p>14:00—17:00 连续出现高负载，已建议启用舒适度优化与设备负载均衡策略。</p></div>
+        <div class="activity-ico"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-file"></use></svg></div>
+        <div><b>四层 RFID 书架上报异常</b><p>设备编号 SHELF-4F-019，历史台账标记为告警。</p></div>
         <span class="tag orange">设备</span>
       </div>
       <div class="activity-item">
-        <div class="activity-ico">质</div>
-        <div><b>地方志加工批次存在少量待复核项</b><p>主要为元数据缺失与图像清晰度异常，系统已自动归入人工复核队列。</p></div>
+        <div class="activity-ico"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-alert"></use></svg></div>
+        <div><b>地方志加工任务待复核</b><p>批次 PR-260921-01，8 项元数据需要人工核对。</p></div>
         <span class="tag green">加工</span>
       </div>
     </div>
@@ -544,8 +566,6 @@ canvas{width:100%;height:100%}
       <div class="kv-item"><span>加工任务样本</span><b>12</b></div>
       <div class="kv-item"><span>设备记录样本</span><b>14</b></div>
     </div>
-    <div style="height:10px"></div>
-    <div class="notice"><strong>接入提示：</strong> 当前 GitHub Pages 仅托管前端文件；真实运行状态、设备告警和控制回执需接入服务端接口后展示。</div>
   </div>
 </div>
 
@@ -561,10 +581,10 @@ canvas{width:100%;height:100%}
   </div>
 
   <div class="grid cols-4">
-    <div class="card metric"><div class="metric-icon blue">资</div><div><div class="metric-label">资源业务入口</div><div class="metric-value" style="font-size:17px">已配置</div><div class="metric-foot">实时接口待接入</div></div></div>
-    <div class="card metric"><div class="metric-icon green">知</div><div><div class="metric-label">知识服务入口</div><div class="metric-value" style="font-size:17px">已配置</div><div class="metric-foot">实时接口待接入</div></div></div>
-    <div class="card metric"><div class="metric-icon orange">数</div><div><div class="metric-label">数据分析视图</div><div class="metric-value" style="font-size:17px">本地批次</div><div class="metric-foot">统计接口待接入</div></div></div>
-    <div class="card metric"><div class="metric-icon purple">设</div><div><div class="metric-label">设备控制接口</div><div class="metric-value" style="font-size:17px">待接入</div><div class="metric-foot">不可远程下发</div></div></div>
+    <div class="card metric"><div class="metric-icon blue"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-library"></use></svg></div><div><div class="metric-label">资源业务入口</div><div class="metric-value" style="font-size:17px">已配置</div><div class="metric-foot">实时接口待接入</div></div></div>
+    <div class="card metric"><div class="metric-icon green"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-book"></use></svg></div><div><div class="metric-label">知识服务入口</div><div class="metric-value" style="font-size:17px">已配置</div><div class="metric-foot">实时接口待接入</div></div></div>
+    <div class="card metric"><div class="metric-icon orange"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-chart"></use></svg></div><div><div class="metric-label">数据分析视图</div><div class="metric-value" style="font-size:17px">本地批次</div><div class="metric-foot">统计接口待接入</div></div></div>
+    <div class="card metric"><div class="metric-icon purple"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-settings"></use></svg></div><div><div class="metric-label">设备控制接口</div><div class="metric-value" style="font-size:17px">待接入</div><div class="metric-foot">不可远程下发</div></div></div>
   </div>
 
   <div style="height:12px"></div>
@@ -627,10 +647,10 @@ canvas{width:100%;height:100%}
           <div class="head-actions"><button class="btn" id="resourceExportBtn">导出当前结果</button><button class="btn primary" data-system="resource">进入资源业务</button></div>
         </div>
         <div class="grid cols-4">
-          <div class="card metric"><div class="metric-icon blue">纸</div><div><div class="metric-label">纸质资源 · 本地样本</div><div class="metric-value">10</div><div class="metric-foot">含馆藏地和在架状态字段</div></div></div>
-          <div class="card metric"><div class="metric-icon green">电</div><div><div class="metric-label">电子资源 · 本地样本</div><div class="metric-value">6</div><div class="metric-foot">数据库及电子出版物</div></div></div>
-          <div class="card metric"><div class="metric-icon orange">数</div><div><div class="metric-label">数字资源 · 本地样本</div><div class="metric-value">8</div><div class="metric-foot">图像、音视频、数字文献</div></div></div>
-          <div class="card metric"><div class="metric-icon purple">特</div><div><div class="metric-label">特色资源 · 本地样本</div><div class="metric-value">6</div><div class="metric-foot">地方文献与专题资源</div></div></div>
+          <div class="card metric"><div class="metric-icon blue"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-book"></use></svg></div><div><div class="metric-label">纸质资源 · 本地样本</div><div class="metric-value">10</div><div class="metric-foot">含馆藏地和在架状态字段</div></div></div>
+          <div class="card metric"><div class="metric-icon green"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-file"></use></svg></div><div><div class="metric-label">电子资源 · 本地样本</div><div class="metric-value">6</div><div class="metric-foot">数据库及电子出版物</div></div></div>
+          <div class="card metric"><div class="metric-icon orange"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-database"></use></svg></div><div><div class="metric-label">数字资源 · 本地样本</div><div class="metric-value">8</div><div class="metric-foot">图像、音视频、数字文献</div></div></div>
+          <div class="card metric"><div class="metric-icon purple"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-archive"></use></svg></div><div><div class="metric-label">特色资源 · 本地样本</div><div class="metric-value">6</div><div class="metric-foot">地方文献与专题资源</div></div></div>
         </div>
         <div style="height:14px"></div>
         <div class="card">
@@ -652,7 +672,7 @@ canvas{width:100%;height:100%}
         <div style="height:14px"></div>
         <div class="grid cols-2">
           <div class="card pad"><div class="section-title"><h3>资源质量检查</h3><span class="sub">本地目录样本</span></div><div class="data-grid" id="catalogQuality"></div></div>
-          <div class="card pad"><div class="section-title"><h3>采编与权限口径</h3><span class="sub">字段说明</span></div><div class="activity"><div class="activity-item"><div class="activity-ico">编</div><div><b>纸质资源</b><p>题名、责任者、主题、索书号、馆藏地和在架状态。</p></div></div><div class="activity-item"><div class="activity-ico">权</div><div><b>电子与数字资源</b><p>载体、访问范围、授权说明及入库状态单独维护。</p></div></div><div class="activity-item"><div class="activity-ico">源</div><div><b>来源可追溯</b><p>记录编号关联采集来源与处理批次，便于后续接口替换。</p></div></div></div></div>
+          <div class="card pad"><div class="section-title"><h3>采编与权限口径</h3><span class="sub">字段说明</span></div><div class="activity"><div class="activity-item"><div class="activity-ico"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-book"></use></svg></div><div><b>纸质资源</b><p>题名、责任者、主题、索书号、馆藏地和在架状态。</p></div></div><div class="activity-item"><div class="activity-ico"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-file"></use></svg></div><div><b>电子与数字资源</b><p>载体、访问范围、授权说明及入库状态单独维护。</p></div></div><div class="activity-item"><div class="activity-ico"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-link"></use></svg></div><div><b>来源可追溯</b><p>记录编号关联采集来源与处理批次，便于后续接口替换。</p></div></div></div></div>
         </div>
       </section>
 
@@ -663,10 +683,10 @@ canvas{width:100%;height:100%}
   </div>
 
   <div class="grid cols-4">
-    <div class="card metric"><div class="metric-icon blue">纸</div><div><div class="metric-label">纸质采集</div><div class="metric-value">326</div><div class="metric-foot">ISBN 扫码 / 拍照归档</div></div></div>
-    <div class="card metric"><div class="metric-icon green">文</div><div><div class="metric-label">文档资源</div><div class="metric-value">1,284</div><div class="metric-foot">PDF / DOCX / EPUB</div></div></div>
-    <div class="card metric"><div class="metric-icon orange">媒</div><div><div class="metric-label">多媒体资源</div><div class="metric-value">684</div><div class="metric-foot">音频 / 视频 / 图像</div></div></div>
-    <div class="card metric"><div class="metric-icon purple">3D</div><div><div class="metric-label">三维资源</div><div class="metric-value">62</div><div class="metric-foot">OBJ 等模型资源</div></div></div>
+    <div class="card metric"><div class="metric-icon blue"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-inbox"></use></svg></div><div><div class="metric-label">纸质采集</div><div class="metric-value">326</div><div class="metric-foot">ISBN 扫码 / 拍照归档</div></div></div>
+    <div class="card metric"><div class="metric-icon green"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-file"></use></svg></div><div><div class="metric-label">文档资源</div><div class="metric-value">1,284</div><div class="metric-foot">PDF / DOCX / EPUB</div></div></div>
+    <div class="card metric"><div class="metric-icon orange"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-gauge"></use></svg></div><div><div class="metric-label">多媒体资源</div><div class="metric-value">684</div><div class="metric-foot">音频 / 视频 / 图像</div></div></div>
+    <div class="card metric"><div class="metric-icon purple"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-layers"></use></svg></div><div><div class="metric-label">三维资源</div><div class="metric-value">62</div><div class="metric-foot">OBJ 等模型资源</div></div></div>
   </div>
 
   <div style="height:14px"></div>
@@ -674,7 +694,7 @@ canvas{width:100%;height:100%}
     <div class="card pad">
       <div class="section-title"><h3>批量采集</h3><span class="sub">自动识别资源类型</span></div>
       <div class="upload-zone">
-        <div class="up-ico">↑</div><b>拖拽文件到此处，或选择采集目录</b>
+        <div class="up-ico"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-upload"></use></svg></div><b>拖拽文件到此处，或选择采集目录</b>
         <p>支持文档、音视频、图像、3D 模型；上传后自动提取元数据并进入加工队列。</p>
         <button class="btn primary" id="fakeUploadBtn">选择文件</button>
       </div>
@@ -723,10 +743,10 @@ canvas{width:100%;height:100%}
 
   <div style="height:14px"></div>
   <div class="grid cols-4">
-    <div class="card metric"><div class="metric-icon blue">批</div><div><div class="metric-label">加工批次样本</div><div class="metric-value">12</div><div class="metric-foot">跨文档、图像、音视频和模型</div></div></div>
-    <div class="card metric"><div class="metric-icon green">验</div><div><div class="metric-label">已完成批次</div><div class="metric-value">5</div><div class="metric-foot">其他记录可按状态查询</div></div></div>
-    <div class="card metric"><div class="metric-icon orange">流</div><div><div class="metric-label">待复核批次</div><div class="metric-value">4</div><div class="metric-foot">异常数见下方台账</div></div></div>
-    <div class="card metric"><div class="metric-icon purple">源</div><div><div class="metric-label">资源载体</div><div class="metric-value">7</div><div class="metric-foot">文献 / 图像 / 音视频等</div></div></div>
+    <div class="card metric"><div class="metric-icon blue"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-workflow"></use></svg></div><div><div class="metric-label">加工批次样本</div><div class="metric-value">12</div><div class="metric-foot">跨文档、图像、音视频和模型</div></div></div>
+    <div class="card metric"><div class="metric-icon green"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-check"></use></svg></div><div><div class="metric-label">已完成批次</div><div class="metric-value">5</div><div class="metric-foot">其他记录可按状态查询</div></div></div>
+    <div class="card metric"><div class="metric-icon orange"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-alert"></use></svg></div><div><div class="metric-label">待复核批次</div><div class="metric-value">4</div><div class="metric-foot">异常数见下方台账</div></div></div>
+    <div class="card metric"><div class="metric-icon purple"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-library"></use></svg></div><div><div class="metric-label">资源载体</div><div class="metric-value">7</div><div class="metric-foot">文献 / 图像 / 音视频等</div></div></div>
   </div>
 
   <div style="height:14px"></div>
@@ -745,10 +765,10 @@ canvas{width:100%;height:100%}
     <div class="card pad">
       <div class="section-title"><h3>加工—存储联动</h3><span class="sub">自动推送与容错</span></div>
       <div class="activity">
-        <div class="activity-item"><div class="activity-ico">推</div><div><b>加工结果推送记录</b><p>地方志_20260921_001.pdf → /archive/doc/2026/09/</p></div><span class="activity-time">09-21 15:22</span></div>
-        <div class="activity-item"><div class="activity-ico">路</div><div><b>存储路径同步记录</b><p>按“类型 + 日期 + ID”生成归档目录</p></div><span class="activity-time">09-21 15:21</span></div>
-        <div class="activity-item"><div class="activity-ico">链</div><div><b>可信记录字段</b><p>摘要哈希、资源标识与处理节点的对应关系</p></div><span class="activity-time">09-21 15:18</span></div>
-        <div class="activity-item"><div class="activity-ico">重</div><div><b>异常重试记录</b><p>第 2 次重试恢复，文件完整性校验字段为“通过”</p></div><span class="activity-time">09-21 15:14</span></div>
+        <div class="activity-item"><div class="activity-ico"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-workflow"></use></svg></div><div><b>加工结果推送记录</b><p>地方志_20260921_001.pdf → /archive/doc/2026/09/</p></div><span class="activity-time">09-21 15:22</span></div>
+        <div class="activity-item"><div class="activity-ico"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-database"></use></svg></div><div><b>存储路径同步记录</b><p>按“类型 + 日期 + ID”生成归档目录</p></div><span class="activity-time">09-21 15:21</span></div>
+        <div class="activity-item"><div class="activity-ico"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-list"></use></svg></div><div><b>可信记录字段</b><p>摘要哈希、资源标识与处理节点的对应关系</p></div><span class="activity-time">09-21 15:18</span></div>
+        <div class="activity-item"><div class="activity-ico"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-list"></use></svg></div><div><b>异常重试记录</b><p>第 2 次重试恢复，文件完整性校验字段为“通过”</p></div><span class="activity-time">09-21 15:14</span></div>
       </div>
     </div>
   </div>
@@ -769,10 +789,10 @@ canvas{width:100%;height:100%}
   </div>
 
   <div class="grid cols-4">
-    <div class="card metric"><div class="metric-icon blue">块</div><div><div class="metric-label">分片对象</div><div class="metric-value">18,432</div><div class="metric-foot">编码块分片存储</div></div></div>
-    <div class="card metric"><div class="metric-icon green">副</div><div><div class="metric-label">动态副本</div><div class="metric-value">2.4×</div><div class="metric-foot">按热度与可靠性动态调整</div></div></div>
-    <div class="card metric"><div class="metric-icon orange">容</div><div><div class="metric-label">存储使用率</div><div class="metric-value">64%</div><div class="metric-foot">阈值告警 80%</div></div></div>
-    <div class="card metric"><div class="metric-icon purple">资</div><div><div class="metric-label">数字资产</div><div class="metric-value">8,176</div><div class="metric-foot">已登记并赋唯一标识</div></div></div>
+    <div class="card metric"><div class="metric-icon blue"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-layers"></use></svg></div><div><div class="metric-label">分片对象</div><div class="metric-value">18,432</div><div class="metric-foot">编码块分片存储</div></div></div>
+    <div class="card metric"><div class="metric-icon green"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-layers"></use></svg></div><div><div class="metric-label">动态副本</div><div class="metric-value">2.4×</div><div class="metric-foot">按热度与可靠性动态调整</div></div></div>
+    <div class="card metric"><div class="metric-icon orange"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-database"></use></svg></div><div><div class="metric-label">存储使用率</div><div class="metric-value">64%</div><div class="metric-foot">阈值告警 80%</div></div></div>
+    <div class="card metric"><div class="metric-icon purple"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-archive"></use></svg></div><div><div class="metric-label">数字资产</div><div class="metric-value">8,176</div><div class="metric-foot">已登记并赋唯一标识</div></div></div>
   </div>
 
   <div style="height:14px"></div>
@@ -802,10 +822,10 @@ canvas{width:100%;height:100%}
 
   <div style="height:14px"></div>
   <div class="grid cols-4">
-    <div class="card metric"><div class="metric-icon blue">链</div><div><div class="metric-label">账本接口</div><div class="metric-value" style="font-size:17px">待接入</div><div class="metric-foot">不可核验实时链上状态</div></div></div>
-    <div class="card metric"><div class="metric-icon green">录</div><div><div class="metric-label">资产台账样本</div><div class="metric-value">3</div><div class="metric-foot">下方可查看字段</div></div></div>
-    <div class="card metric"><div class="metric-icon orange">事</div><div><div class="metric-label">业务事件样本</div><div class="metric-value">5</div><div class="metric-foot">登记 / 评估 / 流转</div></div></div>
-    <div class="card metric"><div class="metric-icon purple">合</div><div><div class="metric-label">规则类型</div><div class="metric-value">4</div><div class="metric-foot">登记、流转与授权等</div></div></div>
+    <div class="card metric"><div class="metric-icon blue"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-link"></use></svg></div><div><div class="metric-label">账本接口</div><div class="metric-value" style="font-size:17px">待接入</div><div class="metric-foot">不可核验实时链上状态</div></div></div>
+    <div class="card metric"><div class="metric-icon green"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-archive"></use></svg></div><div><div class="metric-label">资产台账样本</div><div class="metric-value">3</div><div class="metric-foot">下方可查看字段</div></div></div>
+    <div class="card metric"><div class="metric-icon orange"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-activity"></use></svg></div><div><div class="metric-label">业务事件样本</div><div class="metric-value">5</div><div class="metric-foot">登记 / 评估 / 流转</div></div></div>
+    <div class="card metric"><div class="metric-icon purple"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-list"></use></svg></div><div><div class="metric-label">规则类型</div><div class="metric-value">4</div><div class="metric-foot">登记、流转与授权等</div></div></div>
   </div>
 
   <div style="height:14px"></div>
@@ -846,7 +866,7 @@ canvas{width:100%;height:100%}
   <div class="chain-overview">
     <div class="card chain-card">
       <div class="chain-network">
-        <div class="chain-logo">链</div>
+        <div class="chain-logo"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-link"></use></svg></div>
         <div>
           <div class="chain-title">数字资源可信账本网络</div>
           <div class="chain-sub">节点与共识字段示意 · 实际状态需通过链上接口核验</div>
@@ -933,7 +953,7 @@ canvas{width:100%;height:100%}
   <div class="grid cols-3">
     <div class="card pad">
       <div class="section-title"><h3>用户偏好画像</h3><span class="sub">场景档案 U-ENG-001</span></div>
-      <div class="profile"><div class="profile-avatar">U</div><div><h3>大学生 · 工科方向</h3><p>近30天阅读 18 本 · 活跃度高</p></div></div>
+      <div class="profile"><div class="profile-avatar"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-user"></use></svg></div><div><h3>大学生 · 工科方向</h3><p>近30天阅读 18 本 · 活跃度高</p></div></div>
       <div class="chips"><span class="chip">人工智能 0.92</span><span class="chip">Python 0.84</span><span class="chip">机器学习 0.78</span><span class="chip">数据分析 0.65</span></div>
       <div class="rule"><div><b>新用户初始标签</b><span>专业、兴趣与学习目标可自动生成初始画像</span></div><span class="tag green">已启用</span></div>
     </div>
@@ -1008,10 +1028,10 @@ canvas{width:100%;height:100%}
   </div>
 
   <div class="grid cols-4">
-    <div class="card metric"><div class="metric-icon blue">录</div><div><div class="metric-label">目录范围</div><div class="metric-value">30</div><div class="metric-foot">本地资源记录</div></div></div>
-    <div class="card metric"><div class="metric-icon green">检</div><div><div class="metric-label">当前处理方式</div><div class="metric-value" style="font-size:16px">关键词匹配</div><div class="metric-foot">题名 / 主题 / 摘要</div></div></div>
-    <div class="card metric"><div class="metric-icon orange">源</div><div><div class="metric-label">知识服务入口</div><div class="metric-value" style="font-size:16px">已配置</div><div class="metric-foot">外部系统另页打开</div></div></div>
-    <div class="card metric"><div class="metric-icon purple">接</div><div><div class="metric-label">问答接口</div><div class="metric-value" style="font-size:16px">待接入</div><div class="metric-foot">不生成模型答案</div></div></div>
+    <div class="card metric"><div class="metric-icon blue"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-list"></use></svg></div><div><div class="metric-label">目录范围</div><div class="metric-value">30</div><div class="metric-foot">本地资源记录</div></div></div>
+    <div class="card metric"><div class="metric-icon green"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-file"></use></svg></div><div><div class="metric-label">当前处理方式</div><div class="metric-value" style="font-size:16px">关键词匹配</div><div class="metric-foot">题名 / 主题 / 摘要</div></div></div>
+    <div class="card metric"><div class="metric-icon orange"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-book"></use></svg></div><div><div class="metric-label">知识服务入口</div><div class="metric-value" style="font-size:16px">已配置</div><div class="metric-foot">外部系统另页打开</div></div></div>
+    <div class="card metric"><div class="metric-icon purple"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-message"></use></svg></div><div><div class="metric-label">问答接口</div><div class="metric-value" style="font-size:16px">待接入</div><div class="metric-foot">不生成模型答案</div></div></div>
   </div>
 
   <div style="height:14px"></div>
@@ -1027,7 +1047,7 @@ canvas{width:100%;height:100%}
     </div>
     <div class="chat-main">
       <div class="messages" id="messages">
-        <div class="msg"><div class="msg-avatar">录</div><div class="bubble">输入题名、作者或主题词，可以查询当前导入的目录记录并打开详情。自然语言问答与实时馆藏匹配请点击右上角「进入知识服务」。</div></div>
+        <div class="msg"><div class="msg-avatar"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-search"></use></svg></div><div class="bubble">输入题名、作者或主题词，可以查询当前导入的目录记录并打开详情。自然语言问答与实时馆藏匹配请点击右上角「进入知识服务」。</div></div>
       </div>
       <div class="chat-input"><textarea id="chatText" placeholder="例如：人工智能、地方志、Python"></textarea><button id="sendBtn">检索</button></div>
     </div>
@@ -1111,10 +1131,10 @@ canvas{width:100%;height:100%}
   </div>
 
   <div class="grid cols-4">
-    <div class="card metric"><div class="metric-icon blue">录</div><div><div class="metric-label">资源记录样本</div><div class="metric-value">30</div><div class="metric-foot">四类资源 · 可检索</div></div></div>
-    <div class="card metric"><div class="metric-icon green">核</div><div><div class="metric-label">待复核资源</div><div class="metric-value">6</div><div class="metric-foot">查看资源中心明细</div></div></div>
-    <div class="card metric"><div class="metric-icon orange">设</div><div><div class="metric-label">设备台账记录</div><div class="metric-value">14</div><div class="metric-foot">含 2 条历史告警</div></div></div>
-    <div class="card metric"><div class="metric-icon purple">接</div><div><div class="metric-label">实时统计接口</div><div class="metric-value" style="font-size:16px">待接入</div><div class="metric-foot">不展示实时业务指标</div></div></div>
+    <div class="card metric"><div class="metric-icon blue"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-list"></use></svg></div><div><div class="metric-label">资源记录样本</div><div class="metric-value">30</div><div class="metric-foot">四类资源 · 可检索</div></div></div>
+    <div class="card metric"><div class="metric-icon green"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-alert"></use></svg></div><div><div class="metric-label">待复核资源</div><div class="metric-value">6</div><div class="metric-foot">查看资源中心明细</div></div></div>
+    <div class="card metric"><div class="metric-icon orange"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-settings"></use></svg></div><div><div class="metric-label">设备台账记录</div><div class="metric-value">14</div><div class="metric-foot">含 2 条历史告警</div></div></div>
+    <div class="card metric"><div class="metric-icon purple"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-chart"></use></svg></div><div><div class="metric-label">实时统计接口</div><div class="metric-value" style="font-size:16px">待接入</div><div class="metric-foot">不展示实时业务指标</div></div></div>
   </div>
 
   <div style="height:14px"></div>
@@ -1182,10 +1202,10 @@ canvas{width:100%;height:100%}
   </div>
 
   <div class="grid cols-4">
-    <div class="card metric"><div class="metric-icon blue">GW</div><div><div class="metric-label">网关样本</div><div class="metric-value">3</div><div class="metric-foot">查看设备台账</div></div></div>
-    <div class="card metric"><div class="metric-icon green">协</div><div><div class="metric-label">协议类型</div><div class="metric-value">3</div><div class="metric-foot">MQTT / CoAP / HTTPS</div></div></div>
-    <div class="card metric"><div class="metric-icon orange">设</div><div><div class="metric-label">设备台账样本</div><div class="metric-value">14</div><div class="metric-foot">五类设备可筛选</div></div></div>
-    <div class="card metric"><div class="metric-icon purple">警</div><div><div class="metric-label">历史告警记录</div><div class="metric-value">2</div><div class="metric-foot">仅供台账结构查看</div></div></div>
+    <div class="card metric"><div class="metric-icon blue"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-network"></use></svg></div><div><div class="metric-label">网关样本</div><div class="metric-value">3</div><div class="metric-foot">查看设备台账</div></div></div>
+    <div class="card metric"><div class="metric-icon green"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-link"></use></svg></div><div><div class="metric-label">协议类型</div><div class="metric-value">3</div><div class="metric-foot">MQTT / CoAP / HTTPS</div></div></div>
+    <div class="card metric"><div class="metric-icon orange"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-settings"></use></svg></div><div><div class="metric-label">设备台账样本</div><div class="metric-value">14</div><div class="metric-foot">五类设备可筛选</div></div></div>
+    <div class="card metric"><div class="metric-icon purple"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-alert"></use></svg></div><div><div class="metric-label">历史告警记录</div><div class="metric-value">2</div><div class="metric-foot">仅供台账结构查看</div></div></div>
   </div>
 
   <div style="height:14px"></div>
@@ -1204,7 +1224,7 @@ canvas{width:100%;height:100%}
   <div style="height:14px"></div>
   <div class="gateway">
     <div class="card gateway-box">
-      <div class="gateway-hero"><div class="gateway-ico">GW</div><div><h3 style="margin:0 0 5px;font-size:15px">边缘计算网关 HB-GW-01</h3><div style="font-size:11.5px;color:#6b7487">历史记录 · CPU 28% · 内存 41% · 延迟 18ms · 09-21 15:20</div></div></div>
+      <div class="gateway-hero"><div class="gateway-ico"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-network"></use></svg></div><div><h3 style="margin:0 0 5px;font-size:15px">边缘计算网关 HB-GW-01</h3><div style="font-size:11.5px;color:#6b7487">历史记录 · CPU 28% · 内存 41% · 延迟 18ms · 09-21 15:20</div></div></div>
       <div class="proto"><span>MQTT</span><span>CoAP</span><span>HTTPS</span><span>WebSocket</span></div>
       <div class="device-grid">
         <div class="device"><div class="device-top"><b>环境传感器</b><div class="switch on"></div></div><p>温湿度 / CO₂ / 光照 · 42 台</p></div>
@@ -1288,19 +1308,19 @@ canvas{width:100%;height:100%}
     <div class="head-actions"><button class="btn">应用管理</button></div>
   </div>
   <div class="app-center">
-    <div class="app-card"><div class="appico">搜</div><b>全类型资源统一检索</b><p>跨纸质、电子、数字、特色和三维资源进行统一发现与关联浏览。</p><div class="platform-actions"><button class="external-btn" data-goto="resources">查看</button><button class="external-btn" data-system="resource">进入</button></div></div>
-    <div class="app-card app-featured" data-goto="qa"><div class="appico">检</div><b>智能检索与智能问答</b><p>自然语言检索、检索增强、多轮问答、馆藏匹配与知识来源追溯。</p></div>
-    <div class="app-card" data-goto="plan"><div class="appico">路</div><b>学习路径</b><p>按目标、周期和基础自动生成阶段化学习方案并匹配馆藏。</p></div>
-    <div class="app-card" data-goto="recommend"><div class="appico">荐</div><b>个性化推荐</b><p>融合用户偏好、情境、行为和终端特性动态推荐知识资源。</p></div>
-    <div class="app-card"><div class="appico">解</div><b>内容解析</b><p>单书内容概述、主题分析、摘要、原文摘录与背景说明。</p></div>
-    <div class="app-card"><div class="appico">图</div><b>知识图谱</b><p>以人物、主题、资源和馆藏关系进行关联发现与知识导航。</p></div>
-    <div class="app-card" data-goto="processing"><div class="appico">加</div><b>数字资源加工</b><p>批量处理、自动验证、流向追踪和加工—存储联动。</p></div>
-    <div class="app-card" data-goto="storage"><div class="appico">资</div><b>数字资产管理</b><p>唯一标识、资产登记、评估、流转追溯与可信账本查询。</p></div>
-    <div class="app-card" data-goto="devices"><div class="appico">设</div><b>智能设备调控</b><p>边缘网关、多设备协同、资源调度、异常降级与执行反馈。</p></div>
-    <div class="app-card"><div class="appico">辅</div><b>学习服务</b><p>面向多学科知识点提供解释、示例与学习辅助。</p></div>
-    <div class="app-card"><div class="appico">职</div><b>职业发展</b><p>职业规划、面试准备与能力提升建议。</p></div>
-    <div class="app-card"><div class="appico">摘</div><b>阅读摘要</b><p>围绕主题生成阅读摘要、观点提炼和延伸阅读建议。</p></div>
-    <div class="app-card"><div class="appico">导</div><b>资源导航服务</b><p>期刊、数据库与专题资源的智能发现入口。</p></div>
+    <div class="app-card"><div class="appico"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-grid"></use></svg></div><b>全类型资源统一检索</b><p>跨纸质、电子、数字、特色和三维资源进行统一发现与关联浏览。</p><div class="platform-actions"><button class="external-btn" data-goto="resources">查看</button><button class="external-btn" data-system="resource">进入</button></div></div>
+    <div class="app-card app-featured" data-goto="qa"><div class="appico"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-message"></use></svg></div><b>智能检索与智能问答</b><p>自然语言检索、检索增强、多轮问答、馆藏匹配与知识来源追溯。</p></div>
+    <div class="app-card" data-goto="plan"><div class="appico"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-graduation"></use></svg></div><b>学习路径</b><p>按目标、周期和基础自动生成阶段化学习方案并匹配馆藏。</p></div>
+    <div class="app-card" data-goto="recommend"><div class="appico"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-bookmark"></use></svg></div><b>个性化推荐</b><p>融合用户偏好、情境、行为和终端特性动态推荐知识资源。</p></div>
+    <div class="app-card"><div class="appico"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-file"></use></svg></div><b>内容解析</b><p>单书内容概述、主题分析、摘要、原文摘录与背景说明。</p></div>
+    <div class="app-card"><div class="appico"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-book"></use></svg></div><b>知识图谱</b><p>以人物、主题、资源和馆藏关系进行关联发现与知识导航。</p></div>
+    <div class="app-card" data-goto="processing"><div class="appico"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-workflow"></use></svg></div><b>数字资源加工</b><p>批量处理、自动验证、流向追踪和加工—存储联动。</p></div>
+    <div class="app-card" data-goto="storage"><div class="appico"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-archive"></use></svg></div><b>数字资产管理</b><p>唯一标识、资产登记、评估、流转追溯与可信账本查询。</p></div>
+    <div class="app-card" data-goto="devices"><div class="appico"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-settings"></use></svg></div><b>智能设备调控</b><p>边缘网关、多设备协同、资源调度、异常降级与执行反馈。</p></div>
+    <div class="app-card"><div class="appico"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-graduation"></use></svg></div><b>学习服务</b><p>面向多学科知识点提供解释、示例与学习辅助。</p></div>
+    <div class="app-card"><div class="appico"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-file"></use></svg></div><b>职业发展</b><p>职业规划、面试准备与能力提升建议。</p></div>
+    <div class="app-card"><div class="appico"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-book"></use></svg></div><b>阅读摘要</b><p>围绕主题生成阅读摘要、观点提炼和延伸阅读建议。</p></div>
+    <div class="app-card"><div class="appico"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-library"></use></svg></div><b>资源导航服务</b><p>期刊、数据库与专题资源的智能发现入口。</p></div>
   </div>
 </section>
 
@@ -1397,9 +1417,9 @@ function sendChat(){
  const query=txt.toLowerCase();
  const matches=CATALOG.filter(r=>[r.title,r.creator,r.subject,r.summary].join(" ").toLowerCase().includes(query)).slice(0,4);
  const suggestions=matches.length?matches:CATALOG.filter(r=>["人工智能","机器学习","地方志"].some(s=>query.includes(s)&&r.subject.includes(s))).slice(0,4);
- box.insertAdjacentHTML("beforeend",`<div class="msg user"><div class="msg-avatar">我</div><div class="bubble">${esc(txt)}</div></div>`);
+ box.insertAdjacentHTML("beforeend",`<div class="msg user"><div class="msg-avatar"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-user"></use></svg></div><div class="bubble">${esc(txt)}</div></div>`);
  const result=suggestions.length?`在当前目录样本中找到 ${suggestions.length} 条相关记录：<br>${suggestions.map(r=>`<button class="row-action" data-record="${esc(r.id)}">${esc(r.title)} · ${esc(r.id)}</button>`).join("<br>")}`:"当前目录样本没有匹配记录。可以到知识服务系统继续检索。";
- box.insertAdjacentHTML("beforeend",`<div class="msg"><div class="msg-avatar">录</div><div class="bubble">${result}<br><small>这里提供目录匹配，不生成模型回答；正式智能问答请使用「进入知识服务」。</small></div></div>`);
+ box.insertAdjacentHTML("beforeend",`<div class="msg"><div class="msg-avatar"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-search"></use></svg></div><div class="bubble">${result}<br><small>这里提供目录匹配，不生成模型回答；正式智能问答请使用「进入知识服务」。</small></div></div>`);
  ta.value="";box.scrollTop=box.scrollHeight;
 }
 document.getElementById("sendBtn").addEventListener("click",sendChat);
@@ -1603,7 +1623,7 @@ document.getElementById('deviceExportBtn').addEventListener('click',()=>csvDownl
 document.getElementById('integrationRefreshBtn').addEventListener('click',()=>showNotice('接入配置','资源与知识服务已配置外部业务入口；实时接口、设备控制与链上查询尚未连接。'));
 document.getElementById('integrationLogBtn').addEventListener('click',()=>showNotice('接入说明','当前部署为静态页面。业务运行日志请在各原系统查询；此处仅保留本地目录与台账样本。'));
 document.getElementById('deviceStrategyBtn').addEventListener('click',()=>showNotice('策略说明','调控策略需由设备服务计算并返回执行回执。当前可查看策略字段、历史日志样本与设备台账。'));
-document.getElementById('newCatalogSearch').addEventListener('click',()=>{document.getElementById('messages').innerHTML='<div class="msg"><div class="msg-avatar">录</div><div class="bubble">已清空本页检索记录。请输入题名、作者或主题词。</div></div>';document.getElementById('chatText').focus()});
+document.getElementById('newCatalogSearch').addEventListener('click',()=>{document.getElementById('messages').innerHTML='<div class="msg"><div class="msg-avatar"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-search"></use></svg></div><div class="bubble">已清空本页检索记录。请输入题名、作者或主题词。</div></div>';document.getElementById('chatText').focus()});
 document.getElementById('analyticsExportBtn').addEventListener('click',()=>{const groups=['纸质','电子','数字','特色'].map(type=>[type,CATALOG.filter(r=>r.type===type).length,CATALOG.filter(r=>r.type===type&&r.status==='待复核').length]);csvDownload('资源结构_本地目录样本.csv',['资源类型','目录记录数','待复核数'],groups)});
 document.getElementById('ledgerQueryBtn').addEventListener('click',()=>showNotice('链上查询未接入','交易哈希和节点状态仅为业务字段样本，不是对实际区块链的实时查询。正式核验需连接账本服务。'));
 document.getElementById('ledgerExportBtn').addEventListener('click',()=>csvDownload('可信记录_字段样本.csv',['时间','动作','资产标识','记录状态'],[['2026-09-21 15:22:31','资产登记','DL-HB-20260921-00128','样本记录'],['2026-09-21 15:19:08','资产评估','DL-HB-20260920-00472','样本记录'],['2026-09-21 15:08:12','授权变更','DL-HB-20260920-00204','样本记录']]));
@@ -1645,9 +1665,9 @@ document.querySelectorAll('button:not([id]):not([data-goto]):not([data-system]):
     <div class="modal-head"><h3>消息中心</h3><button class="modal-close" id="notifyClose">×</button></div>
     <div class="modal-body">
       <div class="activity">
-        <div class="activity-item"><div class="activity-ico">告</div><div><b>设备告警记录</b><p>RFID书架 SHELF-4F-019 上报超时</p></div><span class="activity-time">09-21</span></div>
-        <div class="activity-item"><div class="activity-ico">任</div><div><b>加工任务记录</b><p>专题数据库增量导入已完成</p></div><span class="activity-time">09-21</span></div>
-        <div class="activity-item"><div class="activity-ico">数</div><div><b>统计报表字段</b><p>正式日报需从业务系统生成与核验</p></div><span class="activity-time">09-21</span></div>
+        <div class="activity-item"><div class="activity-ico"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-alert"></use></svg></div><div><b>设备告警记录</b><p>RFID书架 SHELF-4F-019 上报超时</p></div><span class="activity-time">09-21</span></div>
+        <div class="activity-item"><div class="activity-ico"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-workflow"></use></svg></div><div><b>加工任务记录</b><p>专题数据库增量导入已完成</p></div><span class="activity-time">09-21</span></div>
+        <div class="activity-item"><div class="activity-ico"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-chart"></use></svg></div><div><b>统计报表字段</b><p>正式日报需从业务系统生成与核验</p></div><span class="activity-time">09-21</span></div>
       </div>
     </div>
   </div>
