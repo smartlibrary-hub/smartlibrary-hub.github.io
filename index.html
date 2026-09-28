@@ -396,6 +396,12 @@ canvas{width:100%;height:100%}
 .chain-logo,.gateway-ico{background:#f5f8fc;box-shadow:none}
 .platform-card .cap-list{display:none}
 .platform-card{min-height:126px}
+.health-card .progress{display:none}
+.health-card{min-height:70px;text-align:left}
+button.health-card{width:100%;font:inherit;color:inherit;cursor:pointer}
+button.health-card:hover{border-color:#a9b9d0;background:#fbfcfe}
+.health-top span{color:#65758c;font-size:10.5px}
+.health-meta{margin-top:13px}
 </style>
 </head>
 <body>
@@ -466,18 +472,18 @@ canvas{width:100%;height:100%}
 
 
         <div class="health-row">
-          <div class="health-card"><div class="health-top"><b>资源业务系统</b><span>↗ 独立入口</span></div><div class="progress"><i style="width:100%"></i></div><div class="health-meta"><span>采访 / 编目 / 馆藏</span><span>未接实时 API</span></div></div>
-          <div class="health-card"><div class="health-top"><b>知识服务系统</b><span>↗ 独立入口</span></div><div class="progress"><i style="width:100%;background:#16a36a"></i></div><div class="health-meta"><span>检索 / 问答 / 阅读</span><span>未接实时 API</span></div></div>
-          <div class="health-card"><div class="health-top"><b>运营数据视图</b><span>● 本地数据</span></div><div class="progress"><i style="width:65%;background:#7b61d1"></i></div><div class="health-meta"><span>目录样本与报表结构</span><span>待数据同步</span></div></div>
-          <div class="health-card"><div class="health-top"><b>设备调控接口</b><span>○ 待接入</span></div><div class="progress"><i style="width:28%;background:#e08a24"></i></div><div class="health-meta"><span>设备台账与策略视图</span><span>不可远程下发</span></div></div>
+          <button class="health-card" type="button" data-system="resource"><div class="health-top"><b>资源业务系统</b><span>打开 ↗</span></div><div class="health-meta"><span>采访 / 编目 / 馆藏</span><span>独立系统</span></div></button>
+          <button class="health-card" type="button" data-system="knowledge"><div class="health-top"><b>知识服务系统</b><span>打开 ↗</span></div><div class="health-meta"><span>检索 / 问答 / 阅读</span><span>独立系统</span></div></button>
+          <div class="health-card"><div class="health-top"><b>运营数据视图</b><span>本地记录</span></div><div class="health-meta"><span>目录与任务台账</span><span>2026-09-21</span></div></div>
+          <div class="health-card"><div class="health-top"><b>设备台账</b><span>本地记录</span></div><div class="health-meta"><span>设备与历史告警</span><span>2026-09-21</span></div></div>
         </div>
 
         <div style="height:14px"></div>
         <div class="grid cols-4">
-          <div class="card metric"><div class="metric-icon blue"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-library"></use></svg></div><div><div class="metric-label">资源总量 · 背景系统</div><div class="metric-value">约 61 万</div><div class="metric-foot">以资源业务系统实际查询为准</div></div></div>
-          <div class="card metric"><div class="metric-icon green"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-list"></use></svg></div><div><div class="metric-label">本地目录记录</div><div class="metric-value" id="catalogCount">—</div><div class="metric-foot">可筛选、查看详情与导出</div></div></div>
-          <div class="card metric"><div class="metric-icon orange"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-grid"></use></svg></div><div><div class="metric-label">资源类型</div><div class="metric-value">4</div><div class="metric-foot">纸质 / 电子 / 数字 / 特色</div></div></div>
-          <div class="card metric"><div class="metric-icon purple"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-link"></use></svg></div><div><div class="metric-label">接入来源</div><div class="metric-value">2</div><div class="metric-foot">资源系统与知识服务入口</div></div></div>
+          <div class="card metric"><div class="metric-icon blue"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-library"></use></svg></div><div><div class="metric-label">资源目录记录</div><div class="metric-value" id="catalogCount">—</div><div class="metric-foot">纸质、电子、数字与特色</div></div></div>
+          <div class="card metric"><div class="metric-icon green"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-workflow"></use></svg></div><div><div class="metric-label">加工任务记录</div><div class="metric-value">12</div><div class="metric-foot">按任务状态查询</div></div></div>
+          <div class="card metric"><div class="metric-icon orange"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-settings"></use></svg></div><div><div class="metric-label">设备台账记录</div><div class="metric-value">14</div><div class="metric-foot">含网关、传感器与馆藏设备</div></div></div>
+          <div class="card metric"><div class="metric-icon purple"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-alert"></use></svg></div><div><div class="metric-label">历史告警记录</div><div class="metric-value">2</div><div class="metric-foot">请在设备台账核对</div></div></div>
         </div>
 
         <div style="height:14px"></div>
@@ -1304,7 +1310,7 @@ canvas{width:100%;height:100%}
       <!-- Apps -->
       <section class="page" id="apps">
   <div class="page-head">
-    <div><h1>应用中心</h1><p>基于资源、知识、数据与设备能力组合形成的场景化智慧应用</p></div>
+    <div><h1>应用中心</h1><p>按业务范围查找资源、知识服务和设备管理功能</p></div>
     <div class="head-actions"><button class="btn">应用管理</button></div>
   </div>
   <div class="app-center">
